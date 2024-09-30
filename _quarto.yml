@@ -37,7 +37,7 @@ website:
         href: blog/index.qmd 
       - text: "CV"
         href: cv/index.qmd
-      - text: "Code tips"
+      - text: "Products"
         menu:
         - text: "Multiple ANN output nodes in R"
           href: https://rpubs.com/seyi/859505
@@ -54,7 +54,7 @@ website:
         - text: "One-sample mean t-test"
           href: https://sotfdataconsult.shinyapps.io/one-sample_mean_t-test
         - text: "Two-sample mean t-test"
-          href: https://softdataconsult.com/carry-out-your-t-test-here-in-few-seconds
+          href: https://sotfdataconsult.shinyapps.io /carry-out-your-t-test-here-in-few-seconds
     
     
     # your social media handles
