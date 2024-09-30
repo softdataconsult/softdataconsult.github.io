@@ -1,0 +1,10 @@
+---
+title: "Data Analytics Using Stata"
+author: "Seyi Ajao"
+date: "2024-09-28"
+categories: [Python, R, Stata, spss, Analytics]
+image: "stata_logo.png"
+---
+
+
+Stata is a versatile software used for data analysis, statistical modeling, and visualization, popular among researchers and professionals. It offers powerful tools for handling complex datasets, making it ideal for econometrics, social science research, and more.

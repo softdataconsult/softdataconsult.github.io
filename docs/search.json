@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "SoftData Consult Blog\nWelcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you’re just starting or looking to deepen your skills, you’ll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let’s embark on this journey of learning, growth, and innovation together!\n\n\n\n\n\n\n\n\n  \n\n\n\n\nData Analytics Using Python\n\n\n\n\n\n\n\nPython\n\n\nR\n\n\nAnalytics\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2024\n\n\nSeyi Ajao\n\n\n\n\n\n\n  \n\n\n\n\nData Analytics & Visualization Using R\n\n\n\n\n\n\n\nPython\n\n\nR\n\n\nAnalytics\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2024\n\n\nSeyi Ajao\n\n\n\n\n\n\n  \n\n\n\n\nData Analytics Using SPSS\n\n\n\n\n\n\n\nPython\n\n\nR\n\n\nStata\n\n\nspss\n\n\nAnalytics\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2024\n\n\nSeyi Ajao\n\n\n\n\n\n\n  \n\n\n\n\nData Analytics Using Stata\n\n\n\n\n\n\n\nPython\n\n\nR\n\n\nStata\n\n\nspss\n\n\nAnalytics\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2024\n\n\nSeyi Ajao\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 25, 2024\n\n\nSeyi Ajao\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/posts/python/index.html",
+    "href": "blog/posts/python/index.html",
+    "title": "Data Analytics Using Python",
+    "section": "",
+    "text": "Unlock the power of data with Python! This course is designed to equip you with practical skills in data analytics, using one of the most versatile programming languages."
+  },
+  {
+    "objectID": "blog/posts/R/index.html",
+    "href": "blog/posts/R/index.html",
+    "title": "Data Analytics & Visualization Using R",
+    "section": "",
+    "text": "Master the art of data analysis with R! In this course, you’ll learn how to explore, visualize, and analyze data using R, a powerful tool for statistical computing."
+  },
+  {
+    "objectID": "blog/posts/spss/index.html",
+    "href": "blog/posts/spss/index.html",
+    "title": "Data Analytics Using SPSS",
+    "section": "",
+    "text": "SPSS is a powerful statistical software used for data analysis, management, and visualization in various fields. It simplifies complex statistical processes, making it easier to analyze data and generate meaningful insights."
+  },
+  {
+    "objectID": "blog/posts/stata/index.html",
+    "href": "blog/posts/stata/index.html",
+    "title": "Data Analytics Using Stata",
+    "section": "",
+    "text": "Stata is a versatile software used for data analysis, statistical modeling, and visualization, popular among researchers and professionals. It offers powerful tools for handling complex datasets, making it ideal for econometrics, social science research, and more."
+  },
+  {
+    "objectID": "blog/posts/welcome-to-my-blog/index.html",
+    "href": "blog/posts/welcome-to-my-blog/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "You are welcome to my Blog!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV\n  \n\n\n  \n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "data_analytics/index.html",
+    "href": "data_analytics/index.html",
+    "title": "Data Analytics",
+    "section": "",
+    "text": "As a Senior Consultant, I have honed my expertise in R Markdown, Python, Stata, SmartPLS, NVivo, etc, equipping organizations with the tools to decipher intricate data landscapes. My approach is rooted in a mission to empower through knowledge, ensuring that every statistical strategy is tailored to promote growth and innovation.\n\nData Analytics Using Python\n\nMy Training Portal\nData analytics using Python offers a robust framework for extracting valuable insights from data. By mastering some foundational concepts and tools, students can build a solid foundation in data analytics and prepare for advanced topics in machine learning and data science.\n\n\nData Analytics Using R\n\nMy Training Portal\nThis course provides an introduction to R programming for undergraduate students, focusing on fundamental concepts and practical applications in data analysis. Students will learn how to write R scripts, manage data, and create visualizations using R’s versatile tools. The course is designed to build a solid foundation in R programming, enabling students to tackle a wide range of data analysis tasks in their academic and professional pursuits.\n\n\nData Analytics Using Stata\n\nMy Training Portal\nEconometrics analysis using Stata equips students with the tools and techniques necessary to perform sophisticated data analysis in economics. By mastering Stata, students can effectively analyze economic data, test hypotheses, and contribute to informed policy-making\n\n\nSPSS for Data Analytics\n\nMy Training Portal\nWelcome to our comprehensive SPSS training course, designed to transform beginners into proficient data analysts in just eight weeks! As we delve into the world of statistical analysis using SPSS, you’ll unlock the power of data-driven decision-making, mastering techniques from basic descriptive statistics to advanced inferential analysis. Whether you’re looking to enhance your research capabilities, boost your career prospects, or simply gain a deeper understanding of data, this course offers a practical, hands-on approach that will equip you with the skills to tackle real-world data challenges confidently. Get ready to embark on an exciting journey into the realm of statistics and discover how to turn raw data into meaningful insights with SPSS!\n\nView the SoftData Consult Learning Portal"
+  },
+  {
+    "objectID": "home/index.html",
+    "href": "home/index.html",
+    "title": "Home",
+    "section": "",
+    "text": "As a consultant and trainer, I leverage cutting-edge tools like R and Python to guide clients in extracting maximum value from their data assets. My services encompass strategic consultancy, hands-on training, and mentorship programs tailored to specific needs. From optimizing operations to uncovering growth opportunities, I provide comprehensive solutions for data-driven success."
+  },
+  {
+    "objectID": "home/index.html#training-on-statistical-data-analytics",
+    "href": "home/index.html#training-on-statistical-data-analytics",
+    "title": "Home",
+    "section": "",
+    "text": "As a consultant and trainer, I leverage cutting-edge tools like R and Python to guide clients in extracting maximum value from their data assets. My services encompass strategic consultancy, hands-on training, and mentorship programs tailored to specific needs. From optimizing operations to uncovering growth opportunities, I provide comprehensive solutions for data-driven success."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my website!",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n\n\n\nWelcome to my website!\nI am a Data Analyst, Trainer, and Consultant specializing in Python, R, Stata, and more. With a passion for turning data into actionable insights, I provide expert consulting and training services tailored to individuals, businesses, and organizations. Whether you’re looking to master data analysis tools or need professional guidance on your data.\nAs a Senior Consultant, I have honed my expertise in R Markdown, SmartPLS, and NVivo, equipping organizations with the tools to decipher intricate data landscapes. My approach is rooted in a mission to empower through knowledge, ensuring that every statistical strategy is tailored to promote growth and innovation.\nStatistical Analysis & Training:\n\nConducted over 50 data analysis workshops for organizations across sectors\nConsulted on 25+ projects, helping clients gain competitive insights through data-driven strategies\nTrained 300+ professionals in advanced statistical methodologies\nCurrently training 2000 students virtually on R programming\n\nSoftware Development:\n\nDeveloped 5 user-friendly statistical software solutions, streamlining analysis for 100+ users\nImproved client productivity by 30% with efficient data visualization and reporting tools\n\nAcademic Editing:\n\nReviewed and edited 200+ scholarly articles, ensuring adherence to standards\nAssisted 75+ researchers in refining their work for publication in esteemed journals\n\nMultimedia Production:\n\nCreated compelling visual content for 30+ clients through professional photography/videography\nProduced 20+ multimedia marketing campaigns, boosting client brand visibility\n\nOnline Education:\n\nFacilitated 15+ online courses, providing accessible training to 500+ learners globally\nDeveloped interactive e-learning modules with 90% participant satisfaction rate\n\nOn this website, you will find a selection of my published works, including scholarly articles, monographs, and translations. You will also find news and updates on my current research projects, as well as information on upcoming events and conferences where I will be speaking. Please feel free to contact me if you have any questions or would like to discuss potential projects.\n\nView the SoftData Consult Learning Portal"
+  },
+  {
+    "objectID": "trainings/index.html",
+    "href": "trainings/index.html",
+    "title": "Trainings",
+    "section": "",
+    "text": "As a consultant and trainer, I leverage cutting-edge tools like R and Python to guide clients in extracting maximum value from their data assets. My services encompass strategic consultancy, hands-on training, and mentorship programs tailored to specific needs. From optimizing operations to uncovering growth opportunities, I provide comprehensive solutions for data-driven success."
+  },
+  {
+    "objectID": "trainings/index.html#learning-python",
+    "href": "trainings/index.html#learning-python",
+    "title": "Trainings",
+    "section": "Learning Python",
+    "text": "Learning Python\nData analytics using Python offers a robust framework for extracting valuable insights from data. By mastering some foundational concepts and tools, students can build a solid foundation in data analytics and prepare for advanced topics in machine learning and data science.\n\nMy Training Portal"
+  },
+  {
+    "objectID": "trainings/index.html#learning-r",
+    "href": "trainings/index.html#learning-r",
+    "title": "Trainings",
+    "section": "Learning R",
+    "text": "Learning R\nThis course provides an introduction to R programming for undergraduate students, focusing on fundamental concepts and practical applications in data analysis. Students will learn how to write R scripts, manage data, and create visualizations using R’s versatile tools. The course is designed to build a solid foundation in R programming, enabling students to tackle a wide range of data analysis tasks in their academic and professional pursuits.\n\nMy Training Portal\n\nView the SoftData Consult Learning Portal)"
+  }
+]
