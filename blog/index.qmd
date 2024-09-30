@@ -11,8 +11,22 @@ page-layout: full
 title-block-banner: true
 ---
 
-```SoftData Consult Blog```
+`SoftData Consult Blog`
 
-Welcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you're just starting or looking to deepen your skills, you'll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let’s embark on this journey of learning, growth, and innovation together!
+Welcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you're just starting or looking to deepen your skills, you'll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let's embark on this journey of learning, growth, and innovation together!
 
+\<p style="margin: 20px"\> Do you enjoy my blog? Subscribe here to get notifications and updates (it's free!):\</p\>
 
+\<div class="grid"\>
+
+\<div class=".d-none .d-md-block g-col-md-1"\>\</div\>
+
+\<div class="g-col-12 g-col-md-10"\>
+
+\<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftzhdHKAVjDC6dqGE9qnb0XjGq6Uy75b_vk29EhVtE_Q6Sqw/viewform?embedded=true" width="740" height="651" frameborder="0" marginheight="0" marginwidth="0"\>Loading...\</iframe\>
+
+\</div\>
+
+\<div class=".d-none .d-md-block g-col-md-1"\>\</div\>
+
+\</div\>
