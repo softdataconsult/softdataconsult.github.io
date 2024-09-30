@@ -1,0 +1,34 @@
+---
+toc: true
+toc-title: Contents
+toc-location: left
+title: Trainings
+---
+
+As a consultant and trainer, I leverage cutting-edge tools like R and Python to guide clients in extracting maximum value from their data assets. My services encompass strategic consultancy, hands-on training, and mentorship programs tailored to specific needs. From optimizing operations to uncovering growth opportunities, I provide comprehensive solutions for data-driven success.
+
+## Learning Python
+
+Data analytics using Python offers a robust framework for extracting valuable insights from data. By mastering some foundational concepts and tools, students can build a solid foundation in data analytics and prepare for advanced topics in machine learning and data science.
+
+<img src="python_logo.png" style="height: 30%; width: 30%; object-fit: contain" onclick="window.open('https://learning.softdataconsult.com/', 'blank');"/>
+
+<a href="https://learning.softdataconsult.com/" target="_blank">My Training Portal</a> 
+
+----
+
+## Learning R
+
+This course provides an introduction to R programming for undergraduate students, focusing on fundamental concepts and practical applications in data analysis. Students will learn how to write R scripts, manage data, and create visualizations using R’s versatile tools. The course is designed to build a solid foundation in R programming, enabling students to tackle a wide range of data analysis tasks in their academic and professional pursuits.
+
+<img src="R_logo.png" style="height: 30%; width: 30%; object-fit: contain" onclick="window.open('https://learning.softdataconsult.com/', 'blank');"/>
+
+<a href="https://learning.softdataconsult.com/" target="_blank">My Training Portal</a> 
+
+
+
+```{=html}
+<div  style="margin: 30px; text-align: center;">
+<a class="btn btn-primary" href="https://learning.softdataconsult.com/" role="button" target="_blank" style="padding: 15px 30px;">View the SoftData Consult Learning Portal)</a>
+</div>
+```

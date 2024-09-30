@@ -1,0 +1,10 @@
+---
+title: "Data Analytics Using Python"
+author: "Seyi Ajao"
+date: "2024-09-28"
+categories: [Python, R, Analytics]
+image: "python_logo.png"
+---
+
+
+Unlock the power of data with Python! This course is designed to equip you with practical skills in data analytics, using one of the most versatile programming languages.
