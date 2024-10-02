@@ -31,8 +31,8 @@ website:
         href: index.qmd
       - text: "Data Analytics"
         href: data_analytics/index.qmd
-      - text: "Trainings"
-        href: trainings/index.qmd
+     # - text: "Trainings"
+       # href: trainings/index.qmd
       - text: "Blog"
         href: blog/index.qmd 
       - text: "CV"
