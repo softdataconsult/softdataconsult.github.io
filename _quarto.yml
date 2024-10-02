@@ -53,8 +53,8 @@ website:
           href: https://softdataconsult.shinyapps.io/multiple_regression
         - text: "One-sample mean t-test"
           href: https://sotfdataconsult.shinyapps.io/one-sample_mean_t-test
-        - text: "Two-sample mean t-test"
-          href: https://sotfdataconsult.shinyapps.io /carry-out-your-t-test-here-in-few-seconds
+        #- text: "Two-sample mean t-test"
+         # href: https://sotfdataconsult.shinyapps.io /carry-out-your-t-test-here-in-few-seconds
     
     
     # your social media handles

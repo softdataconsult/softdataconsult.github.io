@@ -4,12 +4,15 @@ about:
   id: about-block
   image: "img/seyi_pix.jpg"
   links:
+    - icon: youtube
+      text: Youtube
+      href: https://www.youtube.com/@softdataconsult
     - icon: twitter
       text: Twitter
       href: https://twitter.com/seyiajao
     - icon: github
       text: Github
-      href: https://github.com/isaacoluwaseyi/
+      href: https://github.com/softdataconsult/softdataconsult.github.io
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/isaac-oluwaseyi-ajao-datascientist-dataanalyst-statistician-consultant/
