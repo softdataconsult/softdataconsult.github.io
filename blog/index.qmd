@@ -1,5 +1,6 @@
 ---
-#title: "My Blog"
+title: "`SoftData Consult Blog`"
+author: ""
 listing:
   contents: posts
   sort: "date desc"
@@ -8,10 +9,8 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
-title-block-banner: true
+title-block-banner: false
 ---
-
-# SoftData Consult Blog
 
 Welcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you're just starting or looking to deepen your skills, you'll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let's embark on this journey of learning, growth, and innovation together!
 
