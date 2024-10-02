@@ -3,7 +3,7 @@ toc: true
 toc-title: Contents
 toc-location: left
 
-title: "Data Analytics"
+title: "Data Analytics and Training"
 ---
 
 As a Senior Consultant, I have honed my expertise in R Markdown, Python, Stata, SmartPLS, NVivo, etc, equipping organizations with the tools to decipher intricate data landscapes. My approach is rooted in a mission to empower through knowledge, ensuring that every statistical strategy is tailored to promote growth and innovation.
