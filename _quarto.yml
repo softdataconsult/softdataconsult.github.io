@@ -78,9 +78,9 @@ website:
   page-footer: 
     left: |
       <span class="faux-block">&#169; 2024 SoftData Consult</span>
-  center: |
+    center: |
      <span class="faux-block"><a href="https://github.com/softdataconsult/softdataconsult.github.io/">View the tutorial for this template!</a></span>
-  right: |
+    right: |
       <span class="faux-block"><a href="https://github.com/marvinschmitt/quarto-website-template/">View source on GitHub</a></span>
 
 execute:
