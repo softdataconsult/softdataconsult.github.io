@@ -1,6 +1,6 @@
 ---
 title: "Data Analytics Using Python"
-author: "Seyi Ajao"
+author: ""
 date: "2024-09-28"
 categories: [Python, R, Analytics]
 image: "python_logo.png"
