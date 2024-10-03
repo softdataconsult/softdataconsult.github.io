@@ -84,8 +84,8 @@ website:
     center: |
      <span class="faux-block">{{< fa brands orcid >}} <strong>ORCID</strong> [0000-0002-3403-6082](https://orcid.org/0000-0002-3403-6082)</span>
     right: |
-      <span class="faux-block"> Designed with {{< fa heart >}}</span>
-      <span class="faux-block"> Built with {{< fa brands r-project >}} and <a href="https://quarto.org/">Quarto</a></span>
+      <span class="faux-block"> Designed and built with</span>
+      <span class="faux-block"><a href="https://www.r-project.org/">R</a> and <a href="https://quarto.org/">Quarto</a></span>
 
 
 execute:
