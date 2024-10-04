@@ -37,7 +37,7 @@ website:
         href: blog/index.qmd 
       - text: "CV"
         href: cv/index.qmd
-      - text: "Products"
+      - text: "Projects"
         menu:
         - text: "Multiple ANN output nodes in R"
           href: https://rpubs.com/seyi/859505
