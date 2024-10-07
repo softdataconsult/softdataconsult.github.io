@@ -2,6 +2,7 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/pls-sem/index.html",
       "/blog/posts/python/index.html",
       "/blog/posts/stata/index.html",
       "/blog/posts/spss/index.html",
