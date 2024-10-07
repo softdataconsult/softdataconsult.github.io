@@ -1,10 +1,97 @@
 ---
-title: "Data Analytics Using Python"
-author: ""
-date: "2024-09-28"
+title: "One-way ANOVA using Python"
+description: |
+  Learn how to carry out one-way analysis of variance using Python.
+date: "10-07-2024"
+#author: "Isaac Ajao"
+#date: "2024-10-06"
 categories: [Python, R, Analytics]
 image: "python_logo.png"
 ---
 
+In this blog, we'll explore how to perform a One-Way ANOVA in Python to compare the means of multiple groups and assess if they are statistically different.
 
-Unlock the power of data with Python! This course is designed to equip you with practical skills in data analytics, using one of the most versatile programming languages.
+
+### Introduction to One-Way ANOVA in Python
+
+When analyzing data, one of the key tasks is to determine whether the means of different groups are significantly different from one another. One powerful statistical test to help with this is the **Analysis of Variance (ANOVA)**, specifically the **One-Way ANOVA**. This technique is used when you have one independent categorical variable and want to compare the means of two or more groups on a continuous dependent variable.
+
+**One-Way ANOVA** tests the null hypothesis that the means of several groups are equal, versus the alternative hypothesis that at least one group mean is different. It's particularly useful when dealing with experiments or observational studies that involve comparisons across multiple groups or categories.
+
+In Python, we can easily perform One-Way ANOVA using libraries like **SciPy** and **Statsmodels**, which offer user-friendly methods for statistical analysis. In this tutorial, we will walk through the steps of carrying out a One-Way ANOVA in Python, from setting up the data to interpreting the results.
+
+### When to Use One-Way ANOVA:
+
+- You have **one categorical independent variable** with two or more groups (e.g., treatment types or different locations).
+
+- The dependent variable is **continuous** (e.g., height, weight, test scores).
+
+- The data should meet assumptions such as normality within each group and homogeneity of variances.
+
+In the following sections, we will use Python to:
+
+1. Set up and explore the data.
+
+2. Perform One-Way ANOVA using `scipy.stats` and `statsmodels`.
+
+3. Interpret the ANOVA results and check assumptions.
+
+
+# Load the necessary libraries
+
+```{python}
+# Load the necessary libraries
+import pandas as pd
+from scipy import stats
+import statsmodels.api as sm # for statistical analysis
+from statsmodels.formula.api import ols # for statistical analysis
+import seaborn as sns # to plot charts 
+import matplotlib.pyplot as plt # to plot charts
+```
+
+
+
+```{python}
+# Data setup
+data = {
+    'Group': ['Group 1', 'Group 2', 'Group 3', 'Group 4'] * 3,
+    'Layout': ['A'] * 4 + ['B'] * 4 + ['C'] * 4,
+    'Time_Spent': [12, 14, 11, 13, 15, 18, 14, 17, 10, 13, 12, 11]
+}
+
+df = pd.DataFrame(data)
+print("\nData on time spent\n", df)
+```
+
+
+```{python}
+# Performing one-way ANOVA
+model = ols('Time_Spent ~ C(Layout)', data = df).fit()
+anova_table = sm.stats.anova_lm(model,typ=2)
+```
+
+
+```{python}
+# Printing the ANOVA table
+print(anova_table)   # reject Ho (null hypothesis) if p-value is less than 0.05 which says there's no diff in means in the groups
+
+print(model.summary())
+```
+
+
+```{python}
+# Post-hoc test (Tukey's HSD)
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+
+tukey = pairwise_tukeyhsd(endog=df['Time_Spent'], groups=df['Layout'], alpha=0.05)
+print(tukey)
+```
+```{python}
+# Visualizing the results
+sns.boxplot(x='Layout', y='Time_Spent', data=df)
+plt.title('User Engagement Time by Website layout')
+plt.xlabel('Website layout')
+plt.ylabel('Time Spent (minute)')
+plt.show()
+
+```
