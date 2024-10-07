@@ -129,4 +129,3 @@ PLS-SEM is particularly useful when dealing with smaller samples, non-normal dat
 
 PLS-SEM is a powerful and flexible method used to estimate complex models with latent variables and their indicators. It is especially suited for exploratory research and predictive modeling, offering an alternative to traditional covariance-based SEM when data and model conditions are not ideal.
 
-
