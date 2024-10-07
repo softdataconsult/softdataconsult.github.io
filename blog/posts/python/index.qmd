@@ -37,7 +37,7 @@ In the following sections, we will use Python to:
 3. Interpret the ANOVA results and check assumptions.
 
 
-# Load the necessary libraries
+### Load the necessary libraries
 
 ```{python}
 # Load the necessary libraries
