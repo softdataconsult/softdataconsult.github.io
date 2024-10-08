@@ -95,7 +95,7 @@ plt.show()
 
 # Display traffic statistics
 traffic_trend = df['Traffic'].describe()
-print(traffic_trend)
+print("\nDescriptive statistics\n", traffic_trend)
 ```
 
 ### Using the Simple Moving Average (SMA)
