@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://softdataconsult.github.io/about.html</loc>
-    <lastmod>2024-10-08T05:41:33.311Z</lastmod>
-  </url>
-  <url>
     <loc>https://softdataconsult.github.io/trainings/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.437Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/pls-sem/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.324Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/spss/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.325Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/python/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.324Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/home/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.359Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.312Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/stata/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.325Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/website-traffic/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.326Z</lastmod>
-  </url>
-  <url>
-    <loc>https://softdataconsult.github.io/blog/posts/R/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.313Z</lastmod>
+    <lastmod>2024-10-09T21:54:34.239Z</lastmod>
   </url>
   <url>
     <loc>https://softdataconsult.github.io/data_analytics/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.329Z</lastmod>
+    <lastmod>2024-10-09T21:54:34.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/about.html</loc>
+    <lastmod>2024-10-09T21:54:34.095Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/R/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/stata/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/pls-sem/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/home/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.151Z</lastmod>
   </url>
   <url>
     <loc>https://softdataconsult.github.io/cv/index.html</loc>
-    <lastmod>2024-10-08T05:41:33.328Z</lastmod>
+    <lastmod>2024-10-09T21:54:34.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.095Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/python/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/spss/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/blog/posts/website-traffic/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://softdataconsult.github.io/index.html</loc>
+    <lastmod>2024-10-09T21:54:34.239Z</lastmod>
   </url>
 </urlset>
