@@ -15,6 +15,8 @@ Partial Least Squares Structural Equation Modeling (PLS-SEM) is a statistical ap
 
 #### **Key Concepts in PLS-SEM**
 
+![](pls-sem2.png)
+
 1. **Latent Variables (LVs)**:
    Latent variables are unobserved variables that are inferred from multiple observed indicators. In PLS-SEM, these are often theoretical constructs like "Customer Satisfaction" or "Brand Loyalty." LVs are measured indirectly via observed variables, called **indicators**.
 
@@ -89,8 +91,11 @@ PLS-SEM is particularly useful when dealing with smaller samples, non-normal dat
 ### **Model Evaluation Criteria**
 
 1. **Measurement Model**:
+
    - **Reliability**: Evaluated using indicator loadings and composite reliability.
+   
    - **Validity**: Checked with average variance extracted (AVE), discriminant validity (HTMT or Fornell-Larcker criterion).
+   
    - **Collinearity**: VIF (Variance Inflation Factor) to ensure no multicollinearity in formative constructs.
 
 2. **Structural Model**:
@@ -129,3 +134,7 @@ PLS-SEM is particularly useful when dealing with smaller samples, non-normal dat
 
 PLS-SEM is a powerful and flexible method used to estimate complex models with latent variables and their indicators. It is especially suited for exploratory research and predictive modeling, offering an alternative to traditional covariance-based SEM when data and model conditions are not ideal.
 
+
+If you found this article interesting and informative.
+The GitHub repository is [here](https://github.com/softdataconsult/blog/posts/pls-sem).
+You can follow me on [Twitter](https://twitter.com/seyiajao) and [Linkedin](https://www.linkedin.com/in/isaac-oluwaseyi-ajao-datascientist-dataanalyst-statistician-consultant/) for more updates on `R`, `Python`, `STATA` and `Excel` for data science.

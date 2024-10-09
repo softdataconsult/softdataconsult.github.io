@@ -93,5 +93,13 @@ plt.title('User Engagement Time by Website layout')
 plt.xlabel('Website layout')
 plt.ylabel('Time Spent (minute)')
 plt.show()
-
 ```
+
+
+## Resources
+
+You can also watch `One-way Anova using Python` on my YouTube channel for details:
+
+{{< video https://www.youtube.com/watch?v=UCDW5wvVBB8&t=88s aspect-ratio="16x9" >}}
+
+------------------------------------------------------------------------
