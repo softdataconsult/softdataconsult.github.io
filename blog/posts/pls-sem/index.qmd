@@ -1,20 +1,13 @@
 ---
-editor: 
-  markdown: 
-    wrap: 72
----
-
-```         
----
-```
-
 title: "Partial Least Squares Structural Equation Modeling (PLS-SEM)"
-description: \| This course introduces you to Partial Least Squares
-Structural Equation Modeling (PLS-SEM), a statistical technique used to
-analyze complex relationships between observed and latent variables for
-predictive modeling and theory testing. date: "10-07-2024" author:
-"Isaac Ajao" date: "2024-10-06" categories: \[Python, R, Analytics,
-SmartPLS\] image: "pls-sem.png" ---
+description: |
+ This course introduces you to Partial Least Squares Structural Equation Modeling (PLS-SEM), a statistical technique used to analyze complex relationships between observed and latent variables for predictive modeling and theory testing.
+date: "10-07-2024"
+#author: "Isaac Ajao"
+categories: [Python, R, Analytics, SmartPLS]
+image: "pls-sem.png"
+---
+
 
 ### **Introduction**
 
@@ -26,9 +19,9 @@ sciences, particularly when traditional covariance-based SEM (CB-SEM)
 assumptions are too restrictive or the data do not meet normality or
 sample size requirements.
 
-#### **Key Concepts in PLS-SEM**
-
 ![](pls-sem2.png)
+
+#### **Key Concepts in PLS-SEM**
 
 1.  **Latent Variables (LVs)**: Latent variables are unobserved
     variables that are inferred from multiple observed indicators. In
@@ -178,7 +171,7 @@ non-normal data, and exploratory research scenarios.
 ### **PLS-SEM vs. Covariance-Based SEM (CB-SEM)**
 
 | Feature                 | PLS-SEM                               | CB-SEM (e.g., LISREL, AMOS)             |
-|------------------|--------------------------|----------------------------|
+|-------------------------|---------------------------------------|-----------------------------------------|
 | **Goal**                | Prediction, theory development        | Theory confirmation                     |
 | **Sample Size**         | Small to medium                       | Large                                   |
 | **Assumptions**         | Non-parametric, no normality required | Parametric, requires normality          |
