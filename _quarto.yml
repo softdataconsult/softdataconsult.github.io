@@ -39,22 +39,22 @@ website:
         href: cv/index.qmd
       - text: "Projects"
         menu:
-        - text: "Multiple ANN output nodes in R"
-          href: https://rpubs.com/seyi/859505
+       # - text: "Multiple ANN output nodes in R"
+       #   href: https://rpubs.com/seyi/859505
         - text: "Relative Importance Index"
           href: https://softdataconsult.shinyapps.io/rii_shinyapp
-        - text: "Multiple plots with same x axis"
-          href: https://rpubs.com/seyi/Multiple_plots_with_same_x_axis
-        - text: "Mean plots using R"
-          href: https://rpubs.com/seyi/782781
+       # - text: "Multiple plots with same x axis"
+       #   href: https://rpubs.com/seyi/Multiple_plots_with_same_x_axis
+       # - text: "Mean plots using R"
+       #   href: https://rpubs.com/seyi/782781
         - text: "Simple Linear Regression"
           href: https://softdataconsult.shinyapps.io/regression_shinyapp 
         - text: "Multiple Linear Regression"
           href: https://softdataconsult.shinyapps.io/multiple_regression
         - text: "One-sample mean t-test"
           href: https://sotfdataconsult.shinyapps.io/one-sample_mean_t-test
-        #- text: "Two-sample mean t-test"
-         # href: https://sotfdataconsult.shinyapps.io /carry-out-your-t-test-here-in-few-seconds
+        - text: "Two-sample mean t-test"
+          href: https://softdataconsult.shinyapps.io/t-test/
     
     
     # your social media handles
