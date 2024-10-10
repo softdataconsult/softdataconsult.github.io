@@ -10,16 +10,35 @@ image: "spatial2.png"
 ---
 
 
-In this blog, I will demonstrate how to perform spatial data analysis using R, focusing on techniques for exploring and modeling spatial relationships in your data. You'll learn how to handle spatial data, visualize spatial patterns, and apply spatial econometric models to gain deeper insights into spatial dependencies. Case study: Reading Culture Among Higher Education Students in Southwestern Nigeria.
+In this blog, I will demonstrate how to perform spatial data analysis using R, 
+focusing on techniques for exploring and modeling spatial relationships in your 
+data. You'll learn how to handle spatial data, visualize spatial patterns, and 
+apply spatial econometric models to gain deeper insights into spatial 
+dependencies. Case study: Reading Culture Among Higher Education Students in 
+Southwestern Nigeria.
 
 
 ### Introduction 
 
-Spatial econometrics is a branch of econometrics that deals with the modeling and analysis of spatially dependent data. In traditional econometrics, observations are often assumed to be independent of each other, but in spatial econometrics, it is recognized that observations from nearby locations can influence each other, creating spatial dependence.
+Spatial econometrics is a branch of econometrics that deals with the modeling 
+and analysis of spatially dependent data. In traditional econometrics, 
+observations are often assumed to be independent of each other, but in spatial 
+econometrics, it is recognized that observations from nearby locations can 
+influence each other, creating spatial dependence.
 
-This analysis incorporates spatial relationships into models through spatial weights matrices, which define the structure of these dependencies. Two common forms of spatial dependence are spatial lag (where the value of a variable in one location depends on the values of the same variable in nearby locations) and spatial error (where errors in one location are correlated with errors in nearby locations).
+This analysis incorporates spatial relationships into models through spatial 
+weights matrices, which define the structure of these dependencies. Two common
+forms of spatial dependence are spatial lag (where the value of a variable in 
+one location depends on the values of the same variable in nearby locations) 
+and spatial error (where errors in one location are correlated with errors in 
+nearby locations).
 
-Spatial econometrics is especially useful in fields like regional economics, real estate, environmental studies, and geography, where spatial factors significantly impact the relationships being studied. It allows for more accurate modeling and understanding of phenomena such as housing prices, land use, and even the spread of diseases, taking into account the spatial proximity of observations.
+Spatial econometrics is especially useful in fields like regional economics, 
+real estate, environmental studies, and geography, where spatial factors 
+significantly impact the relationships being studied. It allows for more 
+accurate modeling and understanding of phenomena such as housing prices, 
+land use, and even the spread of diseases, taking into account the spatial 
+proximity of observations.
 
 
 ### Load the necessary libraries
@@ -49,7 +68,8 @@ plot(reading)
 class(reading)
 str(reading)
 
-st_is_longlat(reading) # checking whether the geographical coordinates have been projected (the result TRUE means not) 
+st_is_longlat(reading) # checking whether the geographical coordinates have been 
+#projected (the result TRUE means not) 
 
 st_crs(reading) #checking which mapping was applied
 
