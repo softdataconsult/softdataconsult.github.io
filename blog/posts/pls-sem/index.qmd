@@ -2,7 +2,7 @@
 title: "Partial Least Squares Structural Equation Modeling (PLS-SEM)"
 description: |
  This course introduces you to Partial Least Squares Structural Equation Modeling (PLS-SEM), a statistical technique used to analyze complex relationships between observed and latent variables for predictive modeling and theory testing.
-date: "10-07-2024"
+date: today
 #author: "Isaac Ajao"
 categories: [Python, R, Analytics, SmartPLS]
 image: "pls-sem.png"

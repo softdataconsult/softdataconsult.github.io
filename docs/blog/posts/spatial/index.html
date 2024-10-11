@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.353">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Isaac Ajao">
 <meta name="dcterms.date" content="2024-10-10">
 <meta name="description" content="Learn how to handle spatial data analysis using R.">
 <title>SoftData Consult - Spatial Econometrics Data Analysis</title>
@@ -202,6 +203,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Isaac Ajao </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
@@ -1142,8 +1149,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Spatial Econometrics Data Analysis"</span></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
 <span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn how to handle spatial data analysis using R.</span></span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "10-10-2024"</span></span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="co">#author: "Isaac Ajao"</span></span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Isaac Ajao"</span></span>
 <span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a><span class="co">#date: "2024-10-06"</span></span>
 <span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Spatial, R]</span></span>
 <span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "spatial2.png"</span></span>
@@ -1154,284 +1161,286 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a>focusing on techniques for exploring and modeling spatial relationships in your </span>
 <span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a>data. You'll learn how to handle spatial data, visualize spatial patterns, and </span>
 <span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a>apply spatial econometric models to gain deeper insights into spatial </span>
-<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>dependencies. Case study: Reading Culture Among Higher Education Students in </span>
-<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>Southwestern Nigeria.</span>
-<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction </span></span>
+<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>dependencies. </span>
+<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a>**Case study:** Reading Culture Among Higher Education Students in </span>
+<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a>Southwestern Nigeria.</span>
+<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is a branch of econometrics that deals with the modeling </span>
-<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a>and analysis of spatially dependent data. In traditional econometrics, </span>
-<span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a>observations are often assumed to be independent of each other, but in spatial </span>
-<span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a>econometrics, it is recognized that observations from nearby locations can </span>
-<span id="cb77-27"><a href="#cb77-27" aria-hidden="true" tabindex="-1"></a>influence each other, creating spatial dependence.</span>
-<span id="cb77-28"><a href="#cb77-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-29"><a href="#cb77-29" aria-hidden="true" tabindex="-1"></a>This analysis incorporates spatial relationships into models through spatial </span>
-<span id="cb77-30"><a href="#cb77-30" aria-hidden="true" tabindex="-1"></a>weights matrices, which define the structure of these dependencies. Two common</span>
-<span id="cb77-31"><a href="#cb77-31" aria-hidden="true" tabindex="-1"></a>forms of spatial dependence are spatial lag (where the value of a variable in </span>
-<span id="cb77-32"><a href="#cb77-32" aria-hidden="true" tabindex="-1"></a>one location depends on the values of the same variable in nearby locations) </span>
-<span id="cb77-33"><a href="#cb77-33" aria-hidden="true" tabindex="-1"></a>and spatial error (where errors in one location are correlated with errors in </span>
-<span id="cb77-34"><a href="#cb77-34" aria-hidden="true" tabindex="-1"></a>nearby locations).</span>
-<span id="cb77-35"><a href="#cb77-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-36"><a href="#cb77-36" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is especially useful in fields like regional economics, </span>
-<span id="cb77-37"><a href="#cb77-37" aria-hidden="true" tabindex="-1"></a>real estate, environmental studies, and geography, where spatial factors </span>
-<span id="cb77-38"><a href="#cb77-38" aria-hidden="true" tabindex="-1"></a>significantly impact the relationships being studied. It allows for more </span>
-<span id="cb77-39"><a href="#cb77-39" aria-hidden="true" tabindex="-1"></a>accurate modeling and understanding of phenomena such as housing prices, </span>
-<span id="cb77-40"><a href="#cb77-40" aria-hidden="true" tabindex="-1"></a>land use, and even the spread of diseases, taking into account the spatial </span>
-<span id="cb77-41"><a href="#cb77-41" aria-hidden="true" tabindex="-1"></a>proximity of observations.</span>
-<span id="cb77-42"><a href="#cb77-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-43"><a href="#cb77-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-44"><a href="#cb77-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load the necessary libraries</span></span>
+<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction </span></span>
+<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is a branch of econometrics that deals with the modeling </span>
+<span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a>and analysis of spatially dependent data. In traditional econometrics, </span>
+<span id="cb77-27"><a href="#cb77-27" aria-hidden="true" tabindex="-1"></a>observations are often assumed to be independent of each other, but in spatial </span>
+<span id="cb77-28"><a href="#cb77-28" aria-hidden="true" tabindex="-1"></a>econometrics, it is recognized that observations from nearby locations can </span>
+<span id="cb77-29"><a href="#cb77-29" aria-hidden="true" tabindex="-1"></a>influence each other, creating spatial dependence.</span>
+<span id="cb77-30"><a href="#cb77-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-31"><a href="#cb77-31" aria-hidden="true" tabindex="-1"></a>This analysis incorporates spatial relationships into models through spatial </span>
+<span id="cb77-32"><a href="#cb77-32" aria-hidden="true" tabindex="-1"></a>weights matrices, which define the structure of these dependencies. Two common</span>
+<span id="cb77-33"><a href="#cb77-33" aria-hidden="true" tabindex="-1"></a>forms of spatial dependence are spatial lag (where the value of a variable in </span>
+<span id="cb77-34"><a href="#cb77-34" aria-hidden="true" tabindex="-1"></a>one location depends on the values of the same variable in nearby locations) </span>
+<span id="cb77-35"><a href="#cb77-35" aria-hidden="true" tabindex="-1"></a>and spatial error (where errors in one location are correlated with errors in </span>
+<span id="cb77-36"><a href="#cb77-36" aria-hidden="true" tabindex="-1"></a>nearby locations).</span>
+<span id="cb77-37"><a href="#cb77-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-38"><a href="#cb77-38" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is especially useful in fields like regional economics, </span>
+<span id="cb77-39"><a href="#cb77-39" aria-hidden="true" tabindex="-1"></a>real estate, environmental studies, and geography, where spatial factors </span>
+<span id="cb77-40"><a href="#cb77-40" aria-hidden="true" tabindex="-1"></a>significantly impact the relationships being studied. It allows for more </span>
+<span id="cb77-41"><a href="#cb77-41" aria-hidden="true" tabindex="-1"></a>accurate modeling and understanding of phenomena such as housing prices, </span>
+<span id="cb77-42"><a href="#cb77-42" aria-hidden="true" tabindex="-1"></a>land use, and even the spread of diseases, taking into account the spatial </span>
+<span id="cb77-43"><a href="#cb77-43" aria-hidden="true" tabindex="-1"></a>proximity of observations.</span>
+<span id="cb77-44"><a href="#cb77-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-45"><a href="#cb77-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-48"><a href="#cb77-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-49"><a href="#cb77-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb77-50"><a href="#cb77-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb77-51"><a href="#cb77-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(splm)</span>
-<span id="cb77-52"><a href="#cb77-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
-<span id="cb77-53"><a href="#cb77-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
-<span id="cb77-54"><a href="#cb77-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb77-55"><a href="#cb77-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-56"><a href="#cb77-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-57"><a href="#cb77-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reading shape file containing the data</span></span>
-<span id="cb77-60"><a href="#cb77-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-61"><a href="#cb77-61" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading shape file containing the data</span></span>
-<span id="cb77-62"><a href="#cb77-62" aria-hidden="true" tabindex="-1"></a>reading <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>,<span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb77-63"><a href="#cb77-63" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading) <span class="co">#show variable names</span></span>
-<span id="cb77-64"><a href="#cb77-64" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reading)</span>
-<span id="cb77-65"><a href="#cb77-65" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reading)</span>
-<span id="cb77-66"><a href="#cb77-66" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading)</span>
-<span id="cb77-67"><a href="#cb77-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-68"><a href="#cb77-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-69"><a href="#cb77-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-46"><a href="#cb77-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load the necessary libraries</span></span>
+<span id="cb77-47"><a href="#cb77-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-50"><a href="#cb77-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-51"><a href="#cb77-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb77-52"><a href="#cb77-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb77-53"><a href="#cb77-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(splm)</span>
+<span id="cb77-54"><a href="#cb77-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb77-55"><a href="#cb77-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
+<span id="cb77-56"><a href="#cb77-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb77-57"><a href="#cb77-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-58"><a href="#cb77-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-59"><a href="#cb77-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reading the shapefile containing the data</span></span>
+<span id="cb77-62"><a href="#cb77-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-63"><a href="#cb77-63" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading shape file containing the data</span></span>
+<span id="cb77-64"><a href="#cb77-64" aria-hidden="true" tabindex="-1"></a>reading <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>,<span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb77-65"><a href="#cb77-65" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading) <span class="co">#show variable names</span></span>
+<span id="cb77-66"><a href="#cb77-66" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reading)</span>
+<span id="cb77-67"><a href="#cb77-67" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reading)</span>
+<span id="cb77-68"><a href="#cb77-68" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading)</span>
+<span id="cb77-69"><a href="#cb77-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb77-70"><a href="#cb77-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-73"><a href="#cb77-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-74"><a href="#cb77-74" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading)</span>
-<span id="cb77-75"><a href="#cb77-75" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(reading)</span>
-<span id="cb77-76"><a href="#cb77-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-77"><a href="#cb77-77" aria-hidden="true" tabindex="-1"></a><span class="fu">st_is_longlat</span>(reading) <span class="co"># checking whether the geographical coordinates have been </span></span>
-<span id="cb77-78"><a href="#cb77-78" aria-hidden="true" tabindex="-1"></a><span class="co">#projected (the result TRUE means not) </span></span>
-<span id="cb77-79"><a href="#cb77-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-80"><a href="#cb77-80" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(reading) <span class="co">#checking which mapping was applied</span></span>
+<span id="cb77-71"><a href="#cb77-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-72"><a href="#cb77-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-75"><a href="#cb77-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-76"><a href="#cb77-76" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading)</span>
+<span id="cb77-77"><a href="#cb77-77" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(reading)</span>
+<span id="cb77-78"><a href="#cb77-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-79"><a href="#cb77-79" aria-hidden="true" tabindex="-1"></a><span class="fu">st_is_longlat</span>(reading) <span class="co"># checking whether the geographical coordinates have been </span></span>
+<span id="cb77-80"><a href="#cb77-80" aria-hidden="true" tabindex="-1"></a><span class="co">#projected (the result TRUE means not) </span></span>
 <span id="cb77-81"><a href="#cb77-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-82"><a href="#cb77-82" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">st_is_valid</span>(reading)) <span class="co"># validation</span></span>
+<span id="cb77-82"><a href="#cb77-82" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(reading) <span class="co">#checking which mapping was applied</span></span>
 <span id="cb77-83"><a href="#cb77-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-84"><a href="#cb77-84" aria-hidden="true" tabindex="-1"></a>reading_sp<span class="ot">&lt;-</span><span class="fu">as</span>(reading, <span class="st">"Spatial"</span>) </span>
-<span id="cb77-85"><a href="#cb77-85" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading_sp)</span>
-<span id="cb77-86"><a href="#cb77-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-87"><a href="#cb77-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-90"><a href="#cb77-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-91"><a href="#cb77-91" aria-hidden="true" tabindex="-1"></a>reading_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
-<span id="cb77-92"><a href="#cb77-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-93"><a href="#cb77-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-96"><a href="#cb77-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-97"><a href="#cb77-97" aria-hidden="true" tabindex="-1"></a>reading_points_count<span class="ot">&lt;-</span><span class="fu">sapply</span>(reading_points, length)</span>
-<span id="cb77-98"><a href="#cb77-98" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(reading_points_count) <span class="co"># Checking how many vertices are in all counties</span></span>
-<span id="cb77-99"><a href="#cb77-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-100"><a href="#cb77-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-101"><a href="#cb77-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-104"><a href="#cb77-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-105"><a href="#cb77-105" aria-hidden="true" tabindex="-1"></a>reading_simple<span class="ot">&lt;-</span><span class="fu">st_simplify</span>(reading, <span class="at">dTolerance =</span> <span class="dv">50</span>)</span>
-<span id="cb77-106"><a href="#cb77-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-107"><a href="#cb77-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-108"><a href="#cb77-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-111"><a href="#cb77-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-112"><a href="#cb77-112" aria-hidden="true" tabindex="-1"></a>reading_simple_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading_simple<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
-<span id="cb77-113"><a href="#cb77-113" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">sapply</span>(reading_simple_points, length))</span>
-<span id="cb77-114"><a href="#cb77-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-115"><a href="#cb77-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-118"><a href="#cb77-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-119"><a href="#cb77-119" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
-<span id="cb77-120"><a href="#cb77-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-121"><a href="#cb77-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-122"><a href="#cb77-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-125"><a href="#cb77-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-126"><a href="#cb77-126" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(reading))</span>
-<span id="cb77-127"><a href="#cb77-127" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
-<span id="cb77-128"><a href="#cb77-128" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_central<span class="sc">$</span>geometry, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb77-129"><a href="#cb77-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-130"><a href="#cb77-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-133"><a href="#cb77-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-134"><a href="#cb77-134" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb77-135"><a href="#cb77-135" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
-<span id="cb77-136"><a href="#cb77-136" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_central) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
-<span id="cb77-137"><a href="#cb77-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-138"><a href="#cb77-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-141"><a href="#cb77-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-142"><a href="#cb77-142" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> reading_hr)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb77-143"><a href="#cb77-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-144"><a href="#cb77-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-147"><a href="#cb77-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-148"><a href="#cb77-148" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>reading_hr)) <span class="sc">+</span></span>
-<span id="cb77-149"><a href="#cb77-149" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb77-150"><a href="#cb77-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-151"><a href="#cb77-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-152"><a href="#cb77-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-155"><a href="#cb77-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-156"><a href="#cb77-156" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>books_read)) <span class="sc">+</span></span>
-<span id="cb77-157"><a href="#cb77-157" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb77-158"><a href="#cb77-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-159"><a href="#cb77-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-160"><a href="#cb77-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-163"><a href="#cb77-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-164"><a href="#cb77-164" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-165"><a href="#cb77-165" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf)</span>
-<span id="cb77-166"><a href="#cb77-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-167"><a href="#cb77-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-168"><a href="#cb77-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-171"><a href="#cb77-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-172"><a href="#cb77-172" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading)</span>
-<span id="cb77-173"><a href="#cb77-173" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-174"><a href="#cb77-174" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"reading_hr"</span>], </span>
-<span id="cb77-175"><a href="#cb77-175" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students' reading hour"</span>, </span>
-<span id="cb77-176"><a href="#cb77-176" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-177"><a href="#cb77-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-178"><a href="#cb77-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-179"><a href="#cb77-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-182"><a href="#cb77-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-183"><a href="#cb77-183" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-184"><a href="#cb77-184" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"books_read"</span>], </span>
-<span id="cb77-185"><a href="#cb77-185" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of number of books read"</span>, </span>
-<span id="cb77-186"><a href="#cb77-186" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-187"><a href="#cb77-187" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "books_read", fill = topo.colors(5))</span></span>
-<span id="cb77-188"><a href="#cb77-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-189"><a href="#cb77-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-190"><a href="#cb77-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-193"><a href="#cb77-193" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-194"><a href="#cb77-194" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
-<span id="cb77-195"><a href="#cb77-195" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"cgpa"</span>], <span class="at">main =</span> <span class="st">"Spatial Distribution of Students' CGPA"</span>, <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-196"><a href="#cb77-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend</span></span>
-<span id="cb77-197"><a href="#cb77-197" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "CGPA", fill = topo.colors(5))</span></span>
-<span id="cb77-198"><a href="#cb77-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-199"><a href="#cb77-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-202"><a href="#cb77-202" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-203"><a href="#cb77-203" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-204"><a href="#cb77-204" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"love_readi"</span>], </span>
-<span id="cb77-205"><a href="#cb77-205" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students who love reading"</span>, </span>
-<span id="cb77-206"><a href="#cb77-206" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-207"><a href="#cb77-207" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "Love reading", fill = topo.colors(5))</span></span>
-<span id="cb77-208"><a href="#cb77-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-209"><a href="#cb77-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-210"><a href="#cb77-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-213"><a href="#cb77-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-214"><a href="#cb77-214" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-215"><a href="#cb77-215" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"met_standa"</span>], </span>
-<span id="cb77-216"><a href="#cb77-216" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who read at least 1 hour per day"</span>, </span>
-<span id="cb77-217"><a href="#cb77-217" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-218"><a href="#cb77-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-219"><a href="#cb77-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-220"><a href="#cb77-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-223"><a href="#cb77-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-224"><a href="#cb77-224" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
-<span id="cb77-225"><a href="#cb77-225" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"finis_book"</span>], </span>
-<span id="cb77-226"><a href="#cb77-226" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who finished their last book"</span>, </span>
-<span id="cb77-227"><a href="#cb77-227" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-228"><a href="#cb77-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-229"><a href="#cb77-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-230"><a href="#cb77-230" aria-hidden="true" tabindex="-1"></a><span class="fu">### Six maps in one frame</span></span>
+<span id="cb77-84"><a href="#cb77-84" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">st_is_valid</span>(reading)) <span class="co"># validation</span></span>
+<span id="cb77-85"><a href="#cb77-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-86"><a href="#cb77-86" aria-hidden="true" tabindex="-1"></a>reading_sp<span class="ot">&lt;-</span><span class="fu">as</span>(reading, <span class="st">"Spatial"</span>) </span>
+<span id="cb77-87"><a href="#cb77-87" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading_sp)</span>
+<span id="cb77-88"><a href="#cb77-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-89"><a href="#cb77-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-92"><a href="#cb77-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-93"><a href="#cb77-93" aria-hidden="true" tabindex="-1"></a>reading_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
+<span id="cb77-94"><a href="#cb77-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-95"><a href="#cb77-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-98"><a href="#cb77-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-99"><a href="#cb77-99" aria-hidden="true" tabindex="-1"></a>reading_points_count<span class="ot">&lt;-</span><span class="fu">sapply</span>(reading_points, length)</span>
+<span id="cb77-100"><a href="#cb77-100" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(reading_points_count) <span class="co"># Checking how many vertices are in all counties</span></span>
+<span id="cb77-101"><a href="#cb77-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-102"><a href="#cb77-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-103"><a href="#cb77-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-106"><a href="#cb77-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-107"><a href="#cb77-107" aria-hidden="true" tabindex="-1"></a>reading_simple<span class="ot">&lt;-</span><span class="fu">st_simplify</span>(reading, <span class="at">dTolerance =</span> <span class="dv">50</span>)</span>
+<span id="cb77-108"><a href="#cb77-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-109"><a href="#cb77-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-110"><a href="#cb77-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-113"><a href="#cb77-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-114"><a href="#cb77-114" aria-hidden="true" tabindex="-1"></a>reading_simple_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading_simple<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
+<span id="cb77-115"><a href="#cb77-115" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">sapply</span>(reading_simple_points, length))</span>
+<span id="cb77-116"><a href="#cb77-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-117"><a href="#cb77-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-120"><a href="#cb77-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-121"><a href="#cb77-121" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
+<span id="cb77-122"><a href="#cb77-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-123"><a href="#cb77-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-124"><a href="#cb77-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-127"><a href="#cb77-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-128"><a href="#cb77-128" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(reading))</span>
+<span id="cb77-129"><a href="#cb77-129" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
+<span id="cb77-130"><a href="#cb77-130" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_central<span class="sc">$</span>geometry, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb77-131"><a href="#cb77-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-132"><a href="#cb77-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-135"><a href="#cb77-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-136"><a href="#cb77-136" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb77-137"><a href="#cb77-137" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
+<span id="cb77-138"><a href="#cb77-138" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_central) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
+<span id="cb77-139"><a href="#cb77-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-140"><a href="#cb77-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-143"><a href="#cb77-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-144"><a href="#cb77-144" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> reading_hr)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb77-145"><a href="#cb77-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-146"><a href="#cb77-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-149"><a href="#cb77-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-150"><a href="#cb77-150" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>reading_hr)) <span class="sc">+</span></span>
+<span id="cb77-151"><a href="#cb77-151" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb77-152"><a href="#cb77-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-153"><a href="#cb77-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-154"><a href="#cb77-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-157"><a href="#cb77-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-158"><a href="#cb77-158" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>books_read)) <span class="sc">+</span></span>
+<span id="cb77-159"><a href="#cb77-159" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb77-160"><a href="#cb77-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-161"><a href="#cb77-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-162"><a href="#cb77-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-165"><a href="#cb77-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-166"><a href="#cb77-166" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-167"><a href="#cb77-167" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf)</span>
+<span id="cb77-168"><a href="#cb77-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-169"><a href="#cb77-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-170"><a href="#cb77-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-173"><a href="#cb77-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-174"><a href="#cb77-174" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading)</span>
+<span id="cb77-175"><a href="#cb77-175" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-176"><a href="#cb77-176" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"reading_hr"</span>], </span>
+<span id="cb77-177"><a href="#cb77-177" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students' reading hour"</span>, </span>
+<span id="cb77-178"><a href="#cb77-178" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-179"><a href="#cb77-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-180"><a href="#cb77-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-181"><a href="#cb77-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-184"><a href="#cb77-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-185"><a href="#cb77-185" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-186"><a href="#cb77-186" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"books_read"</span>], </span>
+<span id="cb77-187"><a href="#cb77-187" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of number of books read"</span>, </span>
+<span id="cb77-188"><a href="#cb77-188" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-189"><a href="#cb77-189" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "books_read", fill = topo.colors(5))</span></span>
+<span id="cb77-190"><a href="#cb77-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-191"><a href="#cb77-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-192"><a href="#cb77-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-195"><a href="#cb77-195" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-196"><a href="#cb77-196" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
+<span id="cb77-197"><a href="#cb77-197" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"cgpa"</span>], <span class="at">main =</span> <span class="st">"Spatial Distribution of Students' CGPA"</span>, <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-198"><a href="#cb77-198" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend</span></span>
+<span id="cb77-199"><a href="#cb77-199" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "CGPA", fill = topo.colors(5))</span></span>
+<span id="cb77-200"><a href="#cb77-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-201"><a href="#cb77-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-204"><a href="#cb77-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-205"><a href="#cb77-205" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-206"><a href="#cb77-206" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"love_readi"</span>], </span>
+<span id="cb77-207"><a href="#cb77-207" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students who love reading"</span>, </span>
+<span id="cb77-208"><a href="#cb77-208" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-209"><a href="#cb77-209" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "Love reading", fill = topo.colors(5))</span></span>
+<span id="cb77-210"><a href="#cb77-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-211"><a href="#cb77-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-212"><a href="#cb77-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-215"><a href="#cb77-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-216"><a href="#cb77-216" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-217"><a href="#cb77-217" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"met_standa"</span>], </span>
+<span id="cb77-218"><a href="#cb77-218" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who read at least 1 hour per day"</span>, </span>
+<span id="cb77-219"><a href="#cb77-219" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-220"><a href="#cb77-220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-221"><a href="#cb77-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-222"><a href="#cb77-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-225"><a href="#cb77-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-226"><a href="#cb77-226" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb77-227"><a href="#cb77-227" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"finis_book"</span>], </span>
+<span id="cb77-228"><a href="#cb77-228" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who finished their last book"</span>, </span>
+<span id="cb77-229"><a href="#cb77-229" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-230"><a href="#cb77-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb77-231"><a href="#cb77-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-234"><a href="#cb77-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-235"><a href="#cb77-235" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
-<span id="cb77-236"><a href="#cb77-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-237"><a href="#cb77-237" aria-hidden="true" tabindex="-1"></a><span class="co"># Read shapefile</span></span>
-<span id="cb77-238"><a href="#cb77-238" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
-<span id="cb77-239"><a href="#cb77-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-240"><a href="#cb77-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a 2x3 layout with tmap</span></span>
-<span id="cb77-241"><a href="#cb77-241" aria-hidden="true" tabindex="-1"></a>tm_layout <span class="ot">&lt;-</span> <span class="fu">tm_layout</span>(<span class="at">title =</span> <span class="fu">c</span>(<span class="st">"Reading Hour"</span>, <span class="st">"Books Read"</span>, <span class="st">"CGPA"</span>, <span class="st">"Love Reading"</span>, <span class="st">"At least 1 hr/day"</span>, <span class="st">"Finished last book"</span>),</span>
-<span id="cb77-242"><a href="#cb77-242" aria-hidden="true" tabindex="-1"></a>                       <span class="at">frame =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb77-243"><a href="#cb77-243" aria-hidden="true" tabindex="-1"></a>                       <span class="at">asp =</span> <span class="dv">0</span>)  <span class="co"># Set aspect ratio to 0 for individual map customization</span></span>
-<span id="cb77-244"><a href="#cb77-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-245"><a href="#cb77-245" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first map</span></span>
-<span id="cb77-246"><a href="#cb77-246" aria-hidden="true" tabindex="-1"></a>tm1 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-247"><a href="#cb77-247" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-248"><a href="#cb77-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"reading_hr"</span>, <span class="at">title =</span> <span class="st">"Reading Hour"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-249"><a href="#cb77-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-250"><a href="#cb77-250" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the second map</span></span>
-<span id="cb77-251"><a href="#cb77-251" aria-hidden="true" tabindex="-1"></a>tm2 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-252"><a href="#cb77-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-253"><a href="#cb77-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"books_read"</span>, <span class="at">title =</span> <span class="st">"Number of Books Read"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-254"><a href="#cb77-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-255"><a href="#cb77-255" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the third map</span></span>
-<span id="cb77-256"><a href="#cb77-256" aria-hidden="true" tabindex="-1"></a>tm3 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-257"><a href="#cb77-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-258"><a href="#cb77-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"cgpa"</span>, <span class="at">title =</span> <span class="st">"CGPA"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-259"><a href="#cb77-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-260"><a href="#cb77-260" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fourth map</span></span>
-<span id="cb77-261"><a href="#cb77-261" aria-hidden="true" tabindex="-1"></a>tm4 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-262"><a href="#cb77-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-263"><a href="#cb77-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"love_readi"</span>, <span class="at">title =</span> <span class="st">"Love Reading"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-264"><a href="#cb77-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-265"><a href="#cb77-265" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fifth map</span></span>
-<span id="cb77-266"><a href="#cb77-266" aria-hidden="true" tabindex="-1"></a>tm5 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-267"><a href="#cb77-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-268"><a href="#cb77-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"met_standa"</span>, <span class="at">title =</span> <span class="st">"At least 1 hr/day"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-269"><a href="#cb77-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-270"><a href="#cb77-270" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the sixth map</span></span>
-<span id="cb77-271"><a href="#cb77-271" aria-hidden="true" tabindex="-1"></a>tm6 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
-<span id="cb77-272"><a href="#cb77-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
-<span id="cb77-273"><a href="#cb77-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"finis_book"</span>, <span class="at">title =</span> <span class="st">"Finished last book"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
-<span id="cb77-274"><a href="#cb77-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-275"><a href="#cb77-275" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the maps in a 2x3 layout</span></span>
-<span id="cb77-276"><a href="#cb77-276" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_arrange</span>(<span class="fu">list</span>(tm1, tm2, tm3, tm4, tm5, tm6), <span class="at">layout =</span> tm_layout)</span>
-<span id="cb77-277"><a href="#cb77-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-278"><a href="#cb77-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-279"><a href="#cb77-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-282"><a href="#cb77-282" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-283"><a href="#cb77-283" aria-hidden="true" tabindex="-1"></a><span class="co"># read the data from excel for other analysis</span></span>
-<span id="cb77-284"><a href="#cb77-284" aria-hidden="true" tabindex="-1"></a>reading_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"reading_culture_coordinates.csv"</span>)</span>
-<span id="cb77-285"><a href="#cb77-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-286"><a href="#cb77-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-287"><a href="#cb77-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-290"><a href="#cb77-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-291"><a href="#cb77-291" aria-hidden="true" tabindex="-1"></a><span class="co">#define our regression equation so we don't have to type it each time</span></span>
-<span id="cb77-292"><a href="#cb77-292" aria-hidden="true" tabindex="-1"></a>reg.eq1<span class="ot">=</span>reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book</span>
-<span id="cb77-293"><a href="#cb77-293" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
-<span id="cb77-294"><a href="#cb77-294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-295"><a href="#cb77-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-296"><a href="#cb77-296" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spatial weights matrix W</span></span>
-<span id="cb77-299"><a href="#cb77-299" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-300"><a href="#cb77-300" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
-<span id="cb77-301"><a href="#cb77-301" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
-<span id="cb77-302"><a href="#cb77-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-303"><a href="#cb77-303" aria-hidden="true" tabindex="-1"></a>listw</span>
-<span id="cb77-304"><a href="#cb77-304" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-305"><a href="#cb77-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-306"><a href="#cb77-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-307"><a href="#cb77-307" aria-hidden="true" tabindex="-1"></a><span class="fu">### lm.morantest</span></span>
+<span id="cb77-232"><a href="#cb77-232" aria-hidden="true" tabindex="-1"></a><span class="fu">### Six maps in one frame</span></span>
+<span id="cb77-233"><a href="#cb77-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-236"><a href="#cb77-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-237"><a href="#cb77-237" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb77-238"><a href="#cb77-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-239"><a href="#cb77-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Read shapefile</span></span>
+<span id="cb77-240"><a href="#cb77-240" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
+<span id="cb77-241"><a href="#cb77-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-242"><a href="#cb77-242" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a 2x3 layout with tmap</span></span>
+<span id="cb77-243"><a href="#cb77-243" aria-hidden="true" tabindex="-1"></a>tm_layout <span class="ot">&lt;-</span> <span class="fu">tm_layout</span>(<span class="at">title =</span> <span class="fu">c</span>(<span class="st">"Reading Hour"</span>, <span class="st">"Books Read"</span>, <span class="st">"CGPA"</span>, <span class="st">"Love Reading"</span>, <span class="st">"At least 1 hr/day"</span>, <span class="st">"Finished last book"</span>),</span>
+<span id="cb77-244"><a href="#cb77-244" aria-hidden="true" tabindex="-1"></a>                       <span class="at">frame =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb77-245"><a href="#cb77-245" aria-hidden="true" tabindex="-1"></a>                       <span class="at">asp =</span> <span class="dv">0</span>)  <span class="co"># Set aspect ratio to 0 for individual map customization</span></span>
+<span id="cb77-246"><a href="#cb77-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-247"><a href="#cb77-247" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first map</span></span>
+<span id="cb77-248"><a href="#cb77-248" aria-hidden="true" tabindex="-1"></a>tm1 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-249"><a href="#cb77-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-250"><a href="#cb77-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"reading_hr"</span>, <span class="at">title =</span> <span class="st">"Reading Hour"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-251"><a href="#cb77-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-252"><a href="#cb77-252" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the second map</span></span>
+<span id="cb77-253"><a href="#cb77-253" aria-hidden="true" tabindex="-1"></a>tm2 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-254"><a href="#cb77-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-255"><a href="#cb77-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"books_read"</span>, <span class="at">title =</span> <span class="st">"Number of Books Read"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-256"><a href="#cb77-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-257"><a href="#cb77-257" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the third map</span></span>
+<span id="cb77-258"><a href="#cb77-258" aria-hidden="true" tabindex="-1"></a>tm3 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-259"><a href="#cb77-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-260"><a href="#cb77-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"cgpa"</span>, <span class="at">title =</span> <span class="st">"CGPA"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-261"><a href="#cb77-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-262"><a href="#cb77-262" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fourth map</span></span>
+<span id="cb77-263"><a href="#cb77-263" aria-hidden="true" tabindex="-1"></a>tm4 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-264"><a href="#cb77-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-265"><a href="#cb77-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"love_readi"</span>, <span class="at">title =</span> <span class="st">"Love Reading"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-266"><a href="#cb77-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-267"><a href="#cb77-267" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fifth map</span></span>
+<span id="cb77-268"><a href="#cb77-268" aria-hidden="true" tabindex="-1"></a>tm5 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-269"><a href="#cb77-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-270"><a href="#cb77-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"met_standa"</span>, <span class="at">title =</span> <span class="st">"At least 1 hr/day"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-271"><a href="#cb77-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-272"><a href="#cb77-272" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the sixth map</span></span>
+<span id="cb77-273"><a href="#cb77-273" aria-hidden="true" tabindex="-1"></a>tm6 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb77-274"><a href="#cb77-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb77-275"><a href="#cb77-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"finis_book"</span>, <span class="at">title =</span> <span class="st">"Finished last book"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb77-276"><a href="#cb77-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-277"><a href="#cb77-277" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the maps in a 2x3 layout</span></span>
+<span id="cb77-278"><a href="#cb77-278" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_arrange</span>(<span class="fu">list</span>(tm1, tm2, tm3, tm4, tm5, tm6), <span class="at">layout =</span> tm_layout)</span>
+<span id="cb77-279"><a href="#cb77-279" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-280"><a href="#cb77-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-281"><a href="#cb77-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-284"><a href="#cb77-284" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-285"><a href="#cb77-285" aria-hidden="true" tabindex="-1"></a><span class="co"># read the data from excel for other analysis</span></span>
+<span id="cb77-286"><a href="#cb77-286" aria-hidden="true" tabindex="-1"></a>reading_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"reading_culture_coordinates.csv"</span>)</span>
+<span id="cb77-287"><a href="#cb77-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-288"><a href="#cb77-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-289"><a href="#cb77-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-292"><a href="#cb77-292" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-293"><a href="#cb77-293" aria-hidden="true" tabindex="-1"></a><span class="co">#define our regression equation so we don't have to type it each time</span></span>
+<span id="cb77-294"><a href="#cb77-294" aria-hidden="true" tabindex="-1"></a>reg.eq1<span class="ot">=</span>reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book</span>
+<span id="cb77-295"><a href="#cb77-295" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
+<span id="cb77-296"><a href="#cb77-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-297"><a href="#cb77-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-298"><a href="#cb77-298" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spatial weights matrix W</span></span>
+<span id="cb77-301"><a href="#cb77-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-302"><a href="#cb77-302" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
+<span id="cb77-303"><a href="#cb77-303" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
+<span id="cb77-304"><a href="#cb77-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-305"><a href="#cb77-305" aria-hidden="true" tabindex="-1"></a>listw</span>
+<span id="cb77-306"><a href="#cb77-306" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-307"><a href="#cb77-307" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-308"><a href="#cb77-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-311"><a href="#cb77-311" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-312"><a href="#cb77-312" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1, listw )</span>
-<span id="cb77-313"><a href="#cb77-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-314"><a href="#cb77-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-315"><a href="#cb77-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-316"><a href="#cb77-316" aria-hidden="true" tabindex="-1"></a>Let's run the Four simplest models: OLS, SLX, Lag Y, and Lag Error</span>
+<span id="cb77-309"><a href="#cb77-309" aria-hidden="true" tabindex="-1"></a><span class="fu">### lm.morantest</span></span>
+<span id="cb77-310"><a href="#cb77-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-313"><a href="#cb77-313" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-314"><a href="#cb77-314" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1, listw )</span>
+<span id="cb77-315"><a href="#cb77-315" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-316"><a href="#cb77-316" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-317"><a href="#cb77-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-318"><a href="#cb77-318" aria-hidden="true" tabindex="-1"></a><span class="fu">### OLS model</span></span>
-<span id="cb77-321"><a href="#cb77-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-322"><a href="#cb77-322" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
-<span id="cb77-323"><a href="#cb77-323" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
-<span id="cb77-324"><a href="#cb77-324" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
-<span id="cb77-325"><a href="#cb77-325" aria-hidden="true" tabindex="-1"></a>reg1b<span class="ot">=</span><span class="fu">lm</span>(reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book, <span class="at">data=</span>reading)</span>
-<span id="cb77-326"><a href="#cb77-326" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span>
-<span id="cb77-327"><a href="#cb77-327" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1b)</span>
-<span id="cb77-328"><a href="#cb77-328" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1,listw)</span>
-<span id="cb77-329"><a href="#cb77-329" aria-hidden="true" tabindex="-1"></a><span class="co">#lm.moranplot(reg1,listw1)</span></span>
-<span id="cb77-330"><a href="#cb77-330" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.LMtests</span>(reg1,listw,<span class="at">test=</span><span class="fu">c</span>(<span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span>))</span>
-<span id="cb77-331"><a href="#cb77-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-332"><a href="#cb77-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-333"><a href="#cb77-333" aria-hidden="true" tabindex="-1"></a><span class="fu">### SLX (Spatial Lag Model with Exogenous Variables)</span></span>
+<span id="cb77-318"><a href="#cb77-318" aria-hidden="true" tabindex="-1"></a>Let's run the Four simplest models: OLS, SLX, Lag Y, and Lag Error</span>
+<span id="cb77-319"><a href="#cb77-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-320"><a href="#cb77-320" aria-hidden="true" tabindex="-1"></a><span class="fu">### OLS model</span></span>
+<span id="cb77-323"><a href="#cb77-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-324"><a href="#cb77-324" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb77-325"><a href="#cb77-325" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb77-326"><a href="#cb77-326" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
+<span id="cb77-327"><a href="#cb77-327" aria-hidden="true" tabindex="-1"></a>reg1b<span class="ot">=</span><span class="fu">lm</span>(reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book, <span class="at">data=</span>reading)</span>
+<span id="cb77-328"><a href="#cb77-328" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span>
+<span id="cb77-329"><a href="#cb77-329" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1b)</span>
+<span id="cb77-330"><a href="#cb77-330" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1,listw)</span>
+<span id="cb77-331"><a href="#cb77-331" aria-hidden="true" tabindex="-1"></a><span class="co">#lm.moranplot(reg1,listw1)</span></span>
+<span id="cb77-332"><a href="#cb77-332" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.LMtests</span>(reg1,listw,<span class="at">test=</span><span class="fu">c</span>(<span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span>))</span>
+<span id="cb77-333"><a href="#cb77-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb77-334"><a href="#cb77-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-337"><a href="#cb77-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb77-338"><a href="#cb77-338" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your data is named 'your_data'</span></span>
-<span id="cb77-339"><a href="#cb77-339" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
-<span id="cb77-340"><a href="#cb77-340" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
-<span id="cb77-341"><a href="#cb77-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-342"><a href="#cb77-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an 'sf' object with the spatial coordinates</span></span>
-<span id="cb77-343"><a href="#cb77-343" aria-hidden="true" tabindex="-1"></a>reading_sf_data <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(reading_data, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>))</span>
-<span id="cb77-344"><a href="#cb77-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-345"><a href="#cb77-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
-<span id="cb77-346"><a href="#cb77-346" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
-<span id="cb77-347"><a href="#cb77-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb77-348"><a href="#cb77-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-335"><a href="#cb77-335" aria-hidden="true" tabindex="-1"></a><span class="fu">### SLX (Spatial Lag Model with Exogenous Variables)</span></span>
+<span id="cb77-336"><a href="#cb77-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-339"><a href="#cb77-339" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb77-340"><a href="#cb77-340" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your data is named 'your_data'</span></span>
+<span id="cb77-341"><a href="#cb77-341" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb77-342"><a href="#cb77-342" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb77-343"><a href="#cb77-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-344"><a href="#cb77-344" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an 'sf' object with the spatial coordinates</span></span>
+<span id="cb77-345"><a href="#cb77-345" aria-hidden="true" tabindex="-1"></a>reading_sf_data <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(reading_data, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>))</span>
+<span id="cb77-346"><a href="#cb77-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-347"><a href="#cb77-347" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
+<span id="cb77-348"><a href="#cb77-348" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
+<span id="cb77-349"><a href="#cb77-349" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb77-350"><a href="#cb77-350" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

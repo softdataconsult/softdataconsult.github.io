@@ -94,7 +94,7 @@ execute:
 format:
   html:
     fontsize: 1.1em
-    theme: 
+    theme:  
       - pulse
       - html/styles.scss
     toc: false
