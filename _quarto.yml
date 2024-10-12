@@ -93,7 +93,7 @@ execute:
 
 format:
   html:
-    fontsize: 1.1em
+    fontsize: 1.0em
     theme:  
       - pulse
       - html/styles.scss
