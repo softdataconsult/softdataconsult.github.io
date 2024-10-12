@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.3.353">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Isaac Ajao">
-<meta name="dcterms.date" content="2024-10-10">
+<meta name="dcterms.date" content="2024-10-12">
 <meta name="description" content="Learn how to handle spatial data analysis using R.">
 <title>SoftData Consult - Spatial Econometrics Data Analysis</title>
 <style>
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 10, 2024</p>
+        <p class="date">October 12, 2024</p>
       </div>
     </div>
     
@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#load-the-necessary-libraries" id="toc-load-the-necessary-libraries" class="nav-link" data-scroll-target="#load-the-necessary-libraries">Load the necessary libraries</a></li>
-  <li><a href="#reading-shape-file-containing-the-data" id="toc-reading-shape-file-containing-the-data" class="nav-link" data-scroll-target="#reading-shape-file-containing-the-data">Reading shape file containing the data</a></li>
+  <li><a href="#reading-the-shapefile-containing-the-data" id="toc-reading-the-shapefile-containing-the-data" class="nav-link" data-scroll-target="#reading-the-shapefile-containing-the-data">Reading the shapefile containing the data</a></li>
   <li><a href="#six-maps-in-one-frame" id="toc-six-maps-in-one-frame" class="nav-link" data-scroll-target="#six-maps-in-one-frame">Six maps in one frame</a></li>
   <li><a href="#spatial-weights-matrix-w" id="toc-spatial-weights-matrix-w" class="nav-link" data-scroll-target="#spatial-weights-matrix-w">Spatial weights matrix W</a></li>
   <li><a href="#lm.morantest" id="toc-lm.morantest" class="nav-link" data-scroll-target="#lm.morantest">lm.morantest</a></li>
@@ -240,7 +240,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>In this blog, I will demonstrate how to perform spatial data analysis using R, focusing on techniques for exploring and modeling spatial relationships in your data. You’ll learn how to handle spatial data, visualize spatial patterns, and apply spatial econometric models to gain deeper insights into spatial dependencies. Case study: Reading Culture Among Higher Education Students in Southwestern Nigeria.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>In this blog, I will demonstrate how to perform spatial data analysis using R, focusing on techniques for exploring and modeling spatial relationships in your data. You’ll learn how to handle spatial data, visualize spatial patterns, and apply spatial econometric models to gain deeper insights into spatial dependencies.</p>
+<p><strong>Case study:</strong> Reading Culture Among Higher Education Students in Southwestern Nigeria.</p>
 <section id="introduction" class="level3"><h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>Spatial econometrics is a branch of econometrics that deals with the modeling and analysis of spatially dependent data. In traditional econometrics, observations are often assumed to be independent of each other, but in spatial econometrics, it is recognized that observations from nearby locations can influence each other, creating spatial dependence.</p>
 <p>This analysis incorporates spatial relationships into models through spatial weights matrices, which define the structure of these dependencies. Two common forms of spatial dependence are spatial lag (where the value of a variable in one location depends on the values of the same variable in nearby locations) and spatial error (where errors in one location are correlated with errors in nearby locations).</p>
@@ -254,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/">sp</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">stargazer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="reading-shape-file-containing-the-data" class="level3"><h3 class="anchored" data-anchor-id="reading-shape-file-containing-the-data">Reading shape file containing the data</h3>
+</section><section id="reading-the-shapefile-containing-the-data" class="level3"><h3 class="anchored" data-anchor-id="reading-the-shapefile-containing-the-data">Reading the shapefile containing the data</h3>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Reading shape file containing the data</span></span>
 <span><span class="va">reading</span> <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html">st_read</a></span><span class="op">(</span><span class="st">"reading_cultre.shp"</span>,quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -668,15 +669,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>#&gt; Characteristics of weights list object:
 #&gt; Neighbour list object:
 #&gt; Number of regions: 38 
-#&gt; Number of nonzero links: 286 
-#&gt; Percentage nonzero weights: 19.80609 
-#&gt; Average number of links: 7.526316 
+#&gt; Number of nonzero links: 291 
+#&gt; Percentage nonzero weights: 20.15235 
+#&gt; Average number of links: 7.657895 
 #&gt; Non-symmetric neighbours list
 #&gt; 
 #&gt; Weights style: M 
 #&gt; Weights constants summary:
 #&gt;    n   nn  S0  S1   S2
-#&gt; M 38 1444 286 352 8872</code></pre>
+#&gt; M 38 1444 291 362 9428</code></pre>
 </div>
 </div>
 </section><section id="lm.morantest" class="level3"><h3 class="anchored" data-anchor-id="lm.morantest">lm.morantest</h3>
@@ -690,11 +691,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; weights: listw
 #&gt; 
-#&gt; Moran I statistic standard deviate = 2.2349, p-value = 0.01271
+#&gt; Moran I statistic standard deviate = 1.8892, p-value = 0.02943
 #&gt; alternative hypothesis: greater
 #&gt; sample estimates:
 #&gt; Observed Moran I      Expectation         Variance 
-#&gt;      0.079731616     -0.035587780      0.002662569</code></pre>
+#&gt;      0.060233157     -0.035049001      0.002543628</code></pre>
 </div>
 </div>
 <p>Let’s run the Four simplest models: OLS, SLX, Lag Y, and Lag Error</p>
@@ -764,11 +765,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; weights: listw
 #&gt; 
-#&gt; Moran I statistic standard deviate = 2.2349, p-value = 0.01271
+#&gt; Moran I statistic standard deviate = 1.8892, p-value = 0.02943
 #&gt; alternative hypothesis: greater
 #&gt; sample estimates:
 #&gt; Observed Moran I      Expectation         Variance 
-#&gt;      0.079731616     -0.035587780      0.002662569</code></pre>
+#&gt;      0.060233157     -0.035049001      0.002543628</code></pre>
 </div>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#lm.moranplot(reg1,listw1)</span></span>
 <span><span class="fu"><a href="https://r-spatial.github.io/spdep/reference/lm.RStests.html">lm.LMtests</a></span><span class="op">(</span><span class="va">reg1</span>,<span class="va">listw</span>,test<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -781,7 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; test weights: listw
 #&gt; 
-#&gt; RSerr = 1.4772, df = 1, p-value = 0.2242
+#&gt; RSerr = 0.84869, df = 1, p-value = 0.3569
 #&gt; 
 #&gt; 
 #&gt;  Rao's score (a.k.a Lagrange multiplier) diagnostics for spatial
@@ -791,7 +792,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; test weights: listw
 #&gt; 
-#&gt; RSlag = 1.2523, df = 1, p-value = 0.2631
+#&gt; RSlag = 0.53672, df = 1, p-value = 0.4638
 #&gt; 
 #&gt; 
 #&gt;  Rao's score (a.k.a Lagrange multiplier) diagnostics for spatial
@@ -801,7 +802,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; test weights: listw
 #&gt; 
-#&gt; adjRSerr = 0.711, df = 1, p-value = 0.3991
+#&gt; adjRSerr = 1.8699, df = 1, p-value = 0.1715
 #&gt; 
 #&gt; 
 #&gt;  Rao's score (a.k.a Lagrange multiplier) diagnostics for spatial
@@ -811,7 +812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; test weights: listw
 #&gt; 
-#&gt; adjRSlag = 0.48608, df = 1, p-value = 0.4857
+#&gt; adjRSlag = 1.5579, df = 1, p-value = 0.212
 #&gt; 
 #&gt; 
 #&gt;  Rao's score (a.k.a Lagrange multiplier) diagnostics for spatial
@@ -821,7 +822,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #&gt; model: lm(formula = reg.eq1, data = reading)
 #&gt; test weights: listw
 #&gt; 
-#&gt; SARMA = 1.9633, df = 2, p-value = 0.3747</code></pre>
+#&gt; SARMA = 2.4066, df = 2, p-value = 0.3002</code></pre>
 </div>
 </div>
 </section><section id="slx-spatial-lag-model-with-exogenous-variables" class="level3"><h3 class="anchored" data-anchor-id="slx-spatial-lag-model-with-exogenous-variables">SLX (Spatial Lag Model with Exogenous Variables)</h3>
