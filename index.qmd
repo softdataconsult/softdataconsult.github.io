@@ -22,11 +22,12 @@ about:
 ---
 
 ::: {#about-block}
+### **Isaac Oluwaseyi Ajao (Ph.D)**
 :::
 
 # Welcome to my website!
 
-I am a Data Analyst, Trainer, and Consultant specializing in Python, R, Stata, and more. With a passion for turning data into actionable insights, I provide expert consulting and training services tailored to individuals, businesses, and organizations. Whether you're looking to master data analysis tools or need professional guidance on your data.
+I am a Statistician, Data Analyst, Trainer, and Consultant specializing in Python, R, Stata, and more. With a passion for turning data into actionable insights, I provide expert consulting and training services tailored to individuals, businesses, and organizations. Whether you're looking to master data analysis tools or need professional guidance on your data.
 
 As a Senior Consultant, I have honed my expertise in R Markdown, SmartPLS, and NVivo, equipping organizations with the tools to decipher intricate data landscapes. My approach is rooted in a mission to empower through knowledge, ensuring that every statistical strategy is tailored to promote growth and innovation.
 
