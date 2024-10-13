@@ -91,9 +91,9 @@ website:
 execute:
   freeze: auto
 
-format:
+format:  
   html:
-    fontsize: 1.0em
+    fontsize: 1.1em
     theme:  
       - pulse
       - html/styles.scss
