@@ -10,6 +10,7 @@ image: "spatial2.png"
 ---
 
 
+
 In this blog, I will demonstrate how to perform spatial data analysis using R, 
 focusing on techniques for exploring and modeling spatial relationships in your 
 data. You'll learn how to handle spatial data, visualize spatial patterns, and 

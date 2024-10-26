@@ -3,41 +3,9 @@
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
-#description-meta: "{{< meta description >}}"
 
 # Enable banner style title blocks
 title-block-banner: true
-# Default for table of contents
-toc: true
-toc-title: Contents
-toc-location: left
 
-# Default knitr options
-execute:
-  echo: true
-  message: true
-  warning: true
 
-knitr:
-  opts_chunk:
-    comment: "#>"
-    #collapse: true
-    tidy: 'styler'
-    message: false
-    warning: false
-    wrap: true
 
-format:   
-  html:
-    code-tools: true
-    df-print: paged
-    smooth-scroll: true
-    quarto-template-params:
-      banner-header-class: "blog-post"
-    include-after-body: ../html/blog_footer.html
-    
-# Default author
-author:
-  #- name: Dr Isaac Oluwaseyi Ajao
-    url: https://softdataconsult.github.io/
-    orcid: 0000-0002-3403-6082

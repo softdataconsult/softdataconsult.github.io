@@ -22,7 +22,7 @@ about:
 ---
 
 ::: {#about-block}
-## **Isaac Oluwaseyi Ajao (Ph.D)**
+### **Isaac Oluwaseyi Ajao (Ph.D)**
 :::
 
 # Welcome to my website!
