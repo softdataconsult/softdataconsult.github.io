@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -97,6 +131,7 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -130,7 +165,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -230,6 +265,8 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Analytics">Analytics <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(6)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(6)</span></div><div class="category" data-category="SmartPLS">SmartPLS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Spatial">Spatial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Stata">Stata <span class="quarto-category-count">(2)</span></div><div class="category" data-category="spss">spss <span class="quarto-category-count">(2)</span></div></div></div>
@@ -238,7 +275,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><code>Blog</code></h1>
+<div class="quarto-title-block"><div><h1 class="title"><code>Blog</code></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
 </div>
 
 
@@ -259,10 +296,12 @@ window.Quarto = {
 
 
 
+<!-- -->
+
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Python,R,Analytics,SmartPLS" data-listing-date-sort="1729987200000" data-listing-file-modified-sort="1730057513270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
+<div class="quarto-post image-right" data-index="0" data-categories="Python,R,Analytics,SmartPLS" data-listing-date-sort="1731542400000" data-listing-file-modified-sort="1731618652304" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
 <div class="thumbnail">
 <p><a href="../blog/posts/pls-sem/index.html" class="no-external"></a></p><a href="../blog/posts/pls-sem/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/pls-sem/pls-sem.png" class="thumbnail-image"></p>
@@ -296,12 +335,12 @@ SmartPLS
 <div class="metadata">
 <a href="../blog/posts/pls-sem/index.html" class="no-external">
 <div class="listing-date">
-Oct 27, 2024
+Nov 14, 2024
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Spatial,R" data-listing-date-sort="1729987200000" data-listing-file-modified-sort="1730057513274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
+<div class="quarto-post image-right" data-index="1" data-categories="Spatial,R" data-listing-date-sort="1731542400000" data-listing-file-modified-sort="1731618652304" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
 <div class="thumbnail">
 <p><a href="../blog/posts/spatial/index.html" class="no-external"></a></p><a href="../blog/posts/spatial/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/spatial/spatial2.png" class="thumbnail-image"></p>
@@ -329,7 +368,7 @@ R
 <div class="metadata">
 <a href="../blog/posts/spatial/index.html" class="no-external">
 <div class="listing-date">
-Oct 27, 2024
+Nov 14, 2024
 </div>
 <div class="listing-author">
 Isaac Ajao
@@ -337,7 +376,7 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Python,R,Analytics" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1730057513274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="437">
+<div class="quarto-post image-right" data-index="2" data-categories="Python,R,Analytics" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1731618652304" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="437">
 <div class="thumbnail">
 <p><a href="../blog/posts/python/index.html" class="no-external"></a></p><a href="../blog/posts/python/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/python/python_logo.png" class="thumbnail-image"></p>
@@ -376,7 +415,7 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Python" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1730057513286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="886">
+<div class="quarto-post image-right" data-index="3" data-categories="Python" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1731618652320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="886">
 <div class="thumbnail">
 <p><a href="../blog/posts/website-traffic/index.html" class="no-external"></a></p><a href="../blog/posts/website-traffic/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/website-traffic/website-traffic.png" class="thumbnail-image"></p>
@@ -409,7 +448,7 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Python,R,Stata,spss,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1730057513286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<div class="quarto-post image-right" data-index="4" data-categories="Python,R,Stata,spss,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1731618652320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
 <div class="thumbnail">
 <p><a href="../blog/posts/stata/index.html" class="no-external"></a></p><a href="../blog/posts/stata/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/stata/stata_logo.png" class="thumbnail-image"></p>
@@ -451,7 +490,7 @@ Sep 28, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Python,R,Stata,spss,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1730057513286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
+<div class="quarto-post image-right" data-index="5" data-categories="Python,R,Stata,spss,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1731618652320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
 <div class="thumbnail">
 <p><a href="../blog/posts/spss/index.html" class="no-external"></a></p><a href="../blog/posts/spss/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/spss/spss.png" class="thumbnail-image"></p>
@@ -493,7 +532,7 @@ Sep 28, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Python,R,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1730057513258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<div class="quarto-post image-right" data-index="6" data-categories="Python,R,Analytics" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1731618652292" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <div class="thumbnail">
 <p><a href="../blog/posts/R/index.html" class="no-external"></a></p><a href="../blog/posts/R/index.html" class="no-external">
 <p><img loading="lazy" src="../blog/posts/R/R_logo.png" class="thumbnail-image"></p>
@@ -534,6 +573,32 @@ Sep 28, 2024
 No matching items
 </div>
 </div></main> <!-- /main -->
+<hr>
+<!--
+<div class="grid">
+  <div class="g-col-12 g-col-md-8 align-self-center">
+    <p>You can support my work with a coffee if you'd like to:</p>
+  </div>
+  <div class="g-col-12 g-col-md-4 align-self-center">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="marvinschmitt" data-color="#DDDDDD" data-emoji=""  data-font="Poppins" data-text="Support Me" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#E6AA04" ></script>
+  </div>
+</div>
+-->
+
+
+
+
+```html
+<div style="margin-top:20px; margin-bottom: 20px">
+  <img style="width:100%;" src="../img/softdata_consult.png" alt="Softdata Consult Logo">
+</div>
+
+<p style="margin: 20px"> Do you enjoy my blog? Subscribe here to get notifications and updates (it's free!):</p>
+
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftzhdHKAVjDC6dqGE9qnb0XjGq6Uy75b_vk29EhVtE_Q6Sqw/viewform?usp=sharing" width="100%" height="651" frameborder="0" style="max-width: 740px; border: none;" allowfullscreen="">
+  </iframe>
+</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -623,6 +688,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -953,7 +1069,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "`Blog`"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: posts</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: "date desc"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  type: default</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  sort-ui: false</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: false</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">title-block-banner:</span><span class="co"> false</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Welcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you're just starting or looking to deepen your skills, you'll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let's embark on this journey of learning, growth, and innovation together!</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -972,4 +1105,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

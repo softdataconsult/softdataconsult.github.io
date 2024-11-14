@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Isaac Ajao">
-<meta name="dcterms.date" content="2024-10-27">
+<meta name="dcterms.date" content="2024-11-14">
 <meta name="description" content="Learn how to handle spatial data analysis using R.">
 
 <title>Spatial Econometrics Data Analysis – SoftData Consult</title>
@@ -102,11 +102,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -204,10 +205,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default blog-post page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Spatial Econometrics Data Analysis</h1>
+      <div class="quarto-title-block"><div><h1 class="title">Spatial Econometrics Data Analysis</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
                   <div>
         <div class="description">
           <p>Learn how to handle spatial data analysis using R.</p>
@@ -233,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 27, 2024</p>
+        <p class="date">November 14, 2024</p>
       </div>
     </div>
     
@@ -243,8 +244,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#load-the-necessary-libraries" id="toc-load-the-necessary-libraries" class="nav-link" data-scroll-target="#load-the-necessary-libraries">Load the necessary libraries</a></li>
+  <li><a href="#reading-the-shapefile-containing-the-data" id="toc-reading-the-shapefile-containing-the-data" class="nav-link" data-scroll-target="#reading-the-shapefile-containing-the-data">Reading the shapefile containing the data</a></li>
+  <li><a href="#six-maps-in-one-frame" id="toc-six-maps-in-one-frame" class="nav-link" data-scroll-target="#six-maps-in-one-frame">Six maps in one frame</a></li>
+  <li><a href="#spatial-weights-matrix-w" id="toc-spatial-weights-matrix-w" class="nav-link" data-scroll-target="#spatial-weights-matrix-w">Spatial weights matrix W</a></li>
+  <li><a href="#lm.morantest" id="toc-lm.morantest" class="nav-link" data-scroll-target="#lm.morantest">lm.morantest</a></li>
+  <li><a href="#ols-model" id="toc-ols-model" class="nav-link" data-scroll-target="#ols-model">OLS model</a></li>
+  <li><a href="#slx-spatial-lag-model-with-exogenous-variables" id="toc-slx-spatial-lag-model-with-exogenous-variables" class="nav-link" data-scroll-target="#slx-spatial-lag-model-with-exogenous-variables">SLX (Spatial Lag Model with Exogenous Variables)</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -1021,9 +1040,37 @@ value</code></pre>
 </div>
 
 
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
+<hr>
+<!--
+<div class="grid">
+  <div class="g-col-12 g-col-md-8 align-self-center">
+    <p>You can support my work with a coffee if you'd like to:</p>
+  </div>
+  <div class="g-col-12 g-col-md-4 align-self-center">
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="marvinschmitt" data-color="#DDDDDD" data-emoji=""  data-font="Poppins" data-text="Support Me" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#E6AA04" ></script>
+  </div>
+</div>
+-->
+
+
+
+
+```html
+<div style="margin-top:20px; margin-bottom: 20px">
+  <img style="width:100%;" src="../../../img/softdata_consult.png" alt="Softdata Consult Logo">
+</div>
+
+<p style="margin: 20px"> Do you enjoy my blog? Subscribe here to get notifications and updates (it's free!):</p>
+
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftzhdHKAVjDC6dqGE9qnb0XjGq6Uy75b_vk29EhVtE_Q6Sqw/viewform?usp=sharing" width="100%" height="651" frameborder="0" style="max-width: 740px; border: none;" allowfullscreen="">
+  </iframe>
+</div>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1113,6 +1160,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1443,7 +1541,306 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb104" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Spatial Econometrics Data Analysis"</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn how to handle spatial data analysis using R.</span></span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Isaac Ajao"</span></span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a><span class="co">#date: "2024-10-06"</span></span>
+<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Spatial, R]</span></span>
+<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "spatial2.png"</span></span>
+<span id="cb104-10"><a href="#cb104-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb104-11"><a href="#cb104-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-12"><a href="#cb104-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-13"><a href="#cb104-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-14"><a href="#cb104-14" aria-hidden="true" tabindex="-1"></a>In this blog, I will demonstrate how to perform spatial data analysis using R, </span>
+<span id="cb104-15"><a href="#cb104-15" aria-hidden="true" tabindex="-1"></a>focusing on techniques for exploring and modeling spatial relationships in your </span>
+<span id="cb104-16"><a href="#cb104-16" aria-hidden="true" tabindex="-1"></a>data. You'll learn how to handle spatial data, visualize spatial patterns, and </span>
+<span id="cb104-17"><a href="#cb104-17" aria-hidden="true" tabindex="-1"></a>apply spatial econometric models to gain deeper insights into spatial </span>
+<span id="cb104-18"><a href="#cb104-18" aria-hidden="true" tabindex="-1"></a>dependencies. </span>
+<span id="cb104-19"><a href="#cb104-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-20"><a href="#cb104-20" aria-hidden="true" tabindex="-1"></a>**Case study:** Reading Culture Among Higher Education Students in </span>
+<span id="cb104-21"><a href="#cb104-21" aria-hidden="true" tabindex="-1"></a>Southwestern Nigeria.</span>
+<span id="cb104-22"><a href="#cb104-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-23"><a href="#cb104-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-24"><a href="#cb104-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction </span></span>
+<span id="cb104-25"><a href="#cb104-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-26"><a href="#cb104-26" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is a branch of econometrics that deals with the modeling </span>
+<span id="cb104-27"><a href="#cb104-27" aria-hidden="true" tabindex="-1"></a>and analysis of spatially dependent data. In traditional econometrics, </span>
+<span id="cb104-28"><a href="#cb104-28" aria-hidden="true" tabindex="-1"></a>observations are often assumed to be independent of each other, but in spatial </span>
+<span id="cb104-29"><a href="#cb104-29" aria-hidden="true" tabindex="-1"></a>econometrics, it is recognized that observations from nearby locations can </span>
+<span id="cb104-30"><a href="#cb104-30" aria-hidden="true" tabindex="-1"></a>influence each other, creating spatial dependence.</span>
+<span id="cb104-31"><a href="#cb104-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-32"><a href="#cb104-32" aria-hidden="true" tabindex="-1"></a>This analysis incorporates spatial relationships into models through spatial </span>
+<span id="cb104-33"><a href="#cb104-33" aria-hidden="true" tabindex="-1"></a>weights matrices, which define the structure of these dependencies. Two common</span>
+<span id="cb104-34"><a href="#cb104-34" aria-hidden="true" tabindex="-1"></a>forms of spatial dependence are spatial lag (where the value of a variable in </span>
+<span id="cb104-35"><a href="#cb104-35" aria-hidden="true" tabindex="-1"></a>one location depends on the values of the same variable in nearby locations) </span>
+<span id="cb104-36"><a href="#cb104-36" aria-hidden="true" tabindex="-1"></a>and spatial error (where errors in one location are correlated with errors in </span>
+<span id="cb104-37"><a href="#cb104-37" aria-hidden="true" tabindex="-1"></a>nearby locations).</span>
+<span id="cb104-38"><a href="#cb104-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-39"><a href="#cb104-39" aria-hidden="true" tabindex="-1"></a>Spatial econometrics is especially useful in fields like regional economics, </span>
+<span id="cb104-40"><a href="#cb104-40" aria-hidden="true" tabindex="-1"></a>real estate, environmental studies, and geography, where spatial factors </span>
+<span id="cb104-41"><a href="#cb104-41" aria-hidden="true" tabindex="-1"></a>significantly impact the relationships being studied. It allows for more </span>
+<span id="cb104-42"><a href="#cb104-42" aria-hidden="true" tabindex="-1"></a>accurate modeling and understanding of phenomena such as housing prices, </span>
+<span id="cb104-43"><a href="#cb104-43" aria-hidden="true" tabindex="-1"></a>land use, and even the spread of diseases, taking into account the spatial </span>
+<span id="cb104-44"><a href="#cb104-44" aria-hidden="true" tabindex="-1"></a>proximity of observations.</span>
+<span id="cb104-45"><a href="#cb104-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-46"><a href="#cb104-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-47"><a href="#cb104-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load the necessary libraries</span></span>
+<span id="cb104-48"><a href="#cb104-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-51"><a href="#cb104-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-52"><a href="#cb104-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb104-53"><a href="#cb104-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb104-54"><a href="#cb104-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(splm)</span>
+<span id="cb104-55"><a href="#cb104-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb104-56"><a href="#cb104-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
+<span id="cb104-57"><a href="#cb104-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb104-58"><a href="#cb104-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-59"><a href="#cb104-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-60"><a href="#cb104-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reading the shapefile containing the data</span></span>
+<span id="cb104-63"><a href="#cb104-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-64"><a href="#cb104-64" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading shape file containing the data</span></span>
+<span id="cb104-65"><a href="#cb104-65" aria-hidden="true" tabindex="-1"></a>reading <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>,<span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb104-66"><a href="#cb104-66" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading) <span class="co">#show variable names</span></span>
+<span id="cb104-67"><a href="#cb104-67" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reading)</span>
+<span id="cb104-68"><a href="#cb104-68" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reading)</span>
+<span id="cb104-69"><a href="#cb104-69" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading)</span>
+<span id="cb104-70"><a href="#cb104-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-71"><a href="#cb104-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-72"><a href="#cb104-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-73"><a href="#cb104-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-76"><a href="#cb104-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-77"><a href="#cb104-77" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading)</span>
+<span id="cb104-78"><a href="#cb104-78" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(reading)</span>
+<span id="cb104-79"><a href="#cb104-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-80"><a href="#cb104-80" aria-hidden="true" tabindex="-1"></a><span class="fu">st_is_longlat</span>(reading) <span class="co"># checking whether the geographical coordinates have been </span></span>
+<span id="cb104-81"><a href="#cb104-81" aria-hidden="true" tabindex="-1"></a><span class="co">#projected (the result TRUE means not) </span></span>
+<span id="cb104-82"><a href="#cb104-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-83"><a href="#cb104-83" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(reading) <span class="co">#checking which mapping was applied</span></span>
+<span id="cb104-84"><a href="#cb104-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-85"><a href="#cb104-85" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">st_is_valid</span>(reading)) <span class="co"># validation</span></span>
+<span id="cb104-86"><a href="#cb104-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-87"><a href="#cb104-87" aria-hidden="true" tabindex="-1"></a>reading_sp<span class="ot">&lt;-</span><span class="fu">as</span>(reading, <span class="st">"Spatial"</span>) </span>
+<span id="cb104-88"><a href="#cb104-88" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(reading_sp)</span>
+<span id="cb104-89"><a href="#cb104-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-90"><a href="#cb104-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-93"><a href="#cb104-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-94"><a href="#cb104-94" aria-hidden="true" tabindex="-1"></a>reading_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
+<span id="cb104-95"><a href="#cb104-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-96"><a href="#cb104-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-99"><a href="#cb104-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-100"><a href="#cb104-100" aria-hidden="true" tabindex="-1"></a>reading_points_count<span class="ot">&lt;-</span><span class="fu">sapply</span>(reading_points, length)</span>
+<span id="cb104-101"><a href="#cb104-101" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(reading_points_count) <span class="co"># Checking how many vertices are in all counties</span></span>
+<span id="cb104-102"><a href="#cb104-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-103"><a href="#cb104-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-104"><a href="#cb104-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-107"><a href="#cb104-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-108"><a href="#cb104-108" aria-hidden="true" tabindex="-1"></a>reading_simple<span class="ot">&lt;-</span><span class="fu">st_simplify</span>(reading, <span class="at">dTolerance =</span> <span class="dv">50</span>)</span>
+<span id="cb104-109"><a href="#cb104-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-110"><a href="#cb104-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-111"><a href="#cb104-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-114"><a href="#cb104-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-115"><a href="#cb104-115" aria-hidden="true" tabindex="-1"></a>reading_simple_points<span class="ot">&lt;-</span><span class="fu">st_cast</span>(reading_simple<span class="sc">$</span>geometry, <span class="st">"MULTIPOINT"</span>)</span>
+<span id="cb104-116"><a href="#cb104-116" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">sapply</span>(reading_simple_points, length))</span>
+<span id="cb104-117"><a href="#cb104-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-118"><a href="#cb104-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-121"><a href="#cb104-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-122"><a href="#cb104-122" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
+<span id="cb104-123"><a href="#cb104-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-124"><a href="#cb104-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-125"><a href="#cb104-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-128"><a href="#cb104-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-129"><a href="#cb104-129" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(reading))</span>
+<span id="cb104-130"><a href="#cb104-130" aria-hidden="true" tabindex="-1"></a>reading_central<span class="ot">&lt;-</span><span class="fu">st_centroid</span>(reading)</span>
+<span id="cb104-131"><a href="#cb104-131" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_central<span class="sc">$</span>geometry, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb104-132"><a href="#cb104-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-133"><a href="#cb104-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-136"><a href="#cb104-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-137"><a href="#cb104-137" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb104-138"><a href="#cb104-138" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
+<span id="cb104-139"><a href="#cb104-139" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_central) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
+<span id="cb104-140"><a href="#cb104-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-141"><a href="#cb104-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-144"><a href="#cb104-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-145"><a href="#cb104-145" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(reading_simple) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> reading_hr)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb104-146"><a href="#cb104-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-147"><a href="#cb104-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-150"><a href="#cb104-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-151"><a href="#cb104-151" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>reading_hr)) <span class="sc">+</span></span>
+<span id="cb104-152"><a href="#cb104-152" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb104-153"><a href="#cb104-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-154"><a href="#cb104-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-155"><a href="#cb104-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-158"><a href="#cb104-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-159"><a href="#cb104-159" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data=</span>reading_simple, <span class="fu">aes</span>(<span class="at">fill=</span>books_read)) <span class="sc">+</span></span>
+<span id="cb104-160"><a href="#cb104-160" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_sf</span>(<span class="at">data=</span>reading_central, <span class="at">col=</span><span class="st">"red"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb104-161"><a href="#cb104-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-162"><a href="#cb104-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-163"><a href="#cb104-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-166"><a href="#cb104-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-167"><a href="#cb104-167" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-168"><a href="#cb104-168" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf)</span>
+<span id="cb104-169"><a href="#cb104-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-170"><a href="#cb104-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-171"><a href="#cb104-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-174"><a href="#cb104-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-175"><a href="#cb104-175" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(reading)</span>
+<span id="cb104-176"><a href="#cb104-176" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-177"><a href="#cb104-177" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"reading_hr"</span>], </span>
+<span id="cb104-178"><a href="#cb104-178" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students' reading hour"</span>, </span>
+<span id="cb104-179"><a href="#cb104-179" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-180"><a href="#cb104-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-181"><a href="#cb104-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-182"><a href="#cb104-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-185"><a href="#cb104-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-186"><a href="#cb104-186" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-187"><a href="#cb104-187" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"books_read"</span>], </span>
+<span id="cb104-188"><a href="#cb104-188" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of number of books read"</span>, </span>
+<span id="cb104-189"><a href="#cb104-189" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-190"><a href="#cb104-190" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "books_read", fill = topo.colors(5))</span></span>
+<span id="cb104-191"><a href="#cb104-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-192"><a href="#cb104-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-193"><a href="#cb104-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-196"><a href="#cb104-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-197"><a href="#cb104-197" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
+<span id="cb104-198"><a href="#cb104-198" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"cgpa"</span>], <span class="at">main =</span> <span class="st">"Spatial Distribution of Students' CGPA"</span>, <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-199"><a href="#cb104-199" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend</span></span>
+<span id="cb104-200"><a href="#cb104-200" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "CGPA", fill = topo.colors(5))</span></span>
+<span id="cb104-201"><a href="#cb104-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-202"><a href="#cb104-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-205"><a href="#cb104-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-206"><a href="#cb104-206" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-207"><a href="#cb104-207" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"love_readi"</span>], </span>
+<span id="cb104-208"><a href="#cb104-208" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of students who love reading"</span>, </span>
+<span id="cb104-209"><a href="#cb104-209" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-210"><a href="#cb104-210" aria-hidden="true" tabindex="-1"></a><span class="co">#legend("topright", legend = "Love reading", fill = topo.colors(5))</span></span>
+<span id="cb104-211"><a href="#cb104-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-212"><a href="#cb104-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-213"><a href="#cb104-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-216"><a href="#cb104-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-217"><a href="#cb104-217" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-218"><a href="#cb104-218" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"met_standa"</span>], </span>
+<span id="cb104-219"><a href="#cb104-219" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who read at least 1 hour per day"</span>, </span>
+<span id="cb104-220"><a href="#cb104-220" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-221"><a href="#cb104-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-222"><a href="#cb104-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-223"><a href="#cb104-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-226"><a href="#cb104-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-227"><a href="#cb104-227" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">=</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>) <span class="co">#shape file earlier created</span></span>
+<span id="cb104-228"><a href="#cb104-228" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(reading_sf[<span class="st">"finis_book"</span>], </span>
+<span id="cb104-229"><a href="#cb104-229" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Spatial distn. of readers who finished their last book"</span>, </span>
+<span id="cb104-230"><a href="#cb104-230" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-231"><a href="#cb104-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-232"><a href="#cb104-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-233"><a href="#cb104-233" aria-hidden="true" tabindex="-1"></a><span class="fu">### Six maps in one frame</span></span>
+<span id="cb104-234"><a href="#cb104-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-237"><a href="#cb104-237" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-238"><a href="#cb104-238" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb104-239"><a href="#cb104-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-240"><a href="#cb104-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Read shapefile</span></span>
+<span id="cb104-241"><a href="#cb104-241" aria-hidden="true" tabindex="-1"></a>reading_sf <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"reading_cultre.shp"</span>)</span>
+<span id="cb104-242"><a href="#cb104-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-243"><a href="#cb104-243" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a 2x3 layout with tmap</span></span>
+<span id="cb104-244"><a href="#cb104-244" aria-hidden="true" tabindex="-1"></a>tm_layout <span class="ot">&lt;-</span> <span class="fu">tm_layout</span>(<span class="at">title =</span> <span class="fu">c</span>(<span class="st">"Reading Hour"</span>, <span class="st">"Books Read"</span>, <span class="st">"CGPA"</span>, <span class="st">"Love Reading"</span>, <span class="st">"At least 1 hr/day"</span>, <span class="st">"Finished last book"</span>),</span>
+<span id="cb104-245"><a href="#cb104-245" aria-hidden="true" tabindex="-1"></a>                       <span class="at">frame =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb104-246"><a href="#cb104-246" aria-hidden="true" tabindex="-1"></a>                       <span class="at">asp =</span> <span class="dv">0</span>)  <span class="co"># Set aspect ratio to 0 for individual map customization</span></span>
+<span id="cb104-247"><a href="#cb104-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-248"><a href="#cb104-248" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the first map</span></span>
+<span id="cb104-249"><a href="#cb104-249" aria-hidden="true" tabindex="-1"></a>tm1 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-250"><a href="#cb104-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-251"><a href="#cb104-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"reading_hr"</span>, <span class="at">title =</span> <span class="st">"Reading Hour"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-252"><a href="#cb104-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-253"><a href="#cb104-253" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the second map</span></span>
+<span id="cb104-254"><a href="#cb104-254" aria-hidden="true" tabindex="-1"></a>tm2 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-255"><a href="#cb104-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-256"><a href="#cb104-256" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"books_read"</span>, <span class="at">title =</span> <span class="st">"Number of Books Read"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-257"><a href="#cb104-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-258"><a href="#cb104-258" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the third map</span></span>
+<span id="cb104-259"><a href="#cb104-259" aria-hidden="true" tabindex="-1"></a>tm3 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-260"><a href="#cb104-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-261"><a href="#cb104-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"cgpa"</span>, <span class="at">title =</span> <span class="st">"CGPA"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-262"><a href="#cb104-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-263"><a href="#cb104-263" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fourth map</span></span>
+<span id="cb104-264"><a href="#cb104-264" aria-hidden="true" tabindex="-1"></a>tm4 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-265"><a href="#cb104-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-266"><a href="#cb104-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"love_readi"</span>, <span class="at">title =</span> <span class="st">"Love Reading"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-267"><a href="#cb104-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-268"><a href="#cb104-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the fifth map</span></span>
+<span id="cb104-269"><a href="#cb104-269" aria-hidden="true" tabindex="-1"></a>tm5 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-270"><a href="#cb104-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-271"><a href="#cb104-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"met_standa"</span>, <span class="at">title =</span> <span class="st">"At least 1 hr/day"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-272"><a href="#cb104-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-273"><a href="#cb104-273" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the sixth map</span></span>
+<span id="cb104-274"><a href="#cb104-274" aria-hidden="true" tabindex="-1"></a>tm6 <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(reading_sf) <span class="sc">+</span></span>
+<span id="cb104-275"><a href="#cb104-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_borders</span>() <span class="sc">+</span></span>
+<span id="cb104-276"><a href="#cb104-276" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">"finis_book"</span>, <span class="at">title =</span> <span class="st">"Finished last book"</span>, <span class="at">style =</span> <span class="st">"quantile"</span>)</span>
+<span id="cb104-277"><a href="#cb104-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-278"><a href="#cb104-278" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the maps in a 2x3 layout</span></span>
+<span id="cb104-279"><a href="#cb104-279" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_arrange</span>(<span class="fu">list</span>(tm1, tm2, tm3, tm4, tm5, tm6), <span class="at">layout =</span> tm_layout)</span>
+<span id="cb104-280"><a href="#cb104-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-281"><a href="#cb104-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-282"><a href="#cb104-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-285"><a href="#cb104-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-286"><a href="#cb104-286" aria-hidden="true" tabindex="-1"></a><span class="co"># read the data from excel for other analysis</span></span>
+<span id="cb104-287"><a href="#cb104-287" aria-hidden="true" tabindex="-1"></a>reading_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"reading_culture_coordinates.csv"</span>)</span>
+<span id="cb104-288"><a href="#cb104-288" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-289"><a href="#cb104-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-290"><a href="#cb104-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-293"><a href="#cb104-293" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-294"><a href="#cb104-294" aria-hidden="true" tabindex="-1"></a><span class="co">#define our regression equation so we don't have to type it each time</span></span>
+<span id="cb104-295"><a href="#cb104-295" aria-hidden="true" tabindex="-1"></a>reg.eq1<span class="ot">=</span>reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book</span>
+<span id="cb104-296"><a href="#cb104-296" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
+<span id="cb104-297"><a href="#cb104-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-298"><a href="#cb104-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-299"><a href="#cb104-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spatial weights matrix W</span></span>
+<span id="cb104-302"><a href="#cb104-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-303"><a href="#cb104-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
+<span id="cb104-304"><a href="#cb104-304" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
+<span id="cb104-305"><a href="#cb104-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-306"><a href="#cb104-306" aria-hidden="true" tabindex="-1"></a>listw</span>
+<span id="cb104-307"><a href="#cb104-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-308"><a href="#cb104-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-309"><a href="#cb104-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-310"><a href="#cb104-310" aria-hidden="true" tabindex="-1"></a><span class="fu">### lm.morantest</span></span>
+<span id="cb104-311"><a href="#cb104-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-314"><a href="#cb104-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-315"><a href="#cb104-315" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1, listw )</span>
+<span id="cb104-316"><a href="#cb104-316" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-317"><a href="#cb104-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-318"><a href="#cb104-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-319"><a href="#cb104-319" aria-hidden="true" tabindex="-1"></a>Let's run the Four simplest models: OLS, SLX, Lag Y, and Lag Error</span>
+<span id="cb104-320"><a href="#cb104-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-321"><a href="#cb104-321" aria-hidden="true" tabindex="-1"></a><span class="fu">### OLS model</span></span>
+<span id="cb104-324"><a href="#cb104-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-325"><a href="#cb104-325" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb104-326"><a href="#cb104-326" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb104-327"><a href="#cb104-327" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">=</span><span class="fu">lm</span>(reg.eq1,<span class="at">data=</span>reading)</span>
+<span id="cb104-328"><a href="#cb104-328" aria-hidden="true" tabindex="-1"></a>reg1b<span class="ot">=</span><span class="fu">lm</span>(reading_hr <span class="sc">~</span> books_read <span class="sc">+</span> cgpa <span class="sc">+</span> love_readi <span class="sc">+</span> met_standa <span class="sc">+</span> finis_book, <span class="at">data=</span>reading)</span>
+<span id="cb104-329"><a href="#cb104-329" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span>
+<span id="cb104-330"><a href="#cb104-330" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1b)</span>
+<span id="cb104-331"><a href="#cb104-331" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.morantest</span>(reg1,listw)</span>
+<span id="cb104-332"><a href="#cb104-332" aria-hidden="true" tabindex="-1"></a><span class="co">#lm.moranplot(reg1,listw1)</span></span>
+<span id="cb104-333"><a href="#cb104-333" aria-hidden="true" tabindex="-1"></a><span class="fu">lm.LMtests</span>(reg1,listw,<span class="at">test=</span><span class="fu">c</span>(<span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span>))</span>
+<span id="cb104-334"><a href="#cb104-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-335"><a href="#cb104-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-336"><a href="#cb104-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### SLX (Spatial Lag Model with Exogenous Variables)</span></span>
+<span id="cb104-337"><a href="#cb104-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-340"><a href="#cb104-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb104-341"><a href="#cb104-341" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your data is named 'your_data'</span></span>
+<span id="cb104-342"><a href="#cb104-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb104-343"><a href="#cb104-343" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb104-344"><a href="#cb104-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-345"><a href="#cb104-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an 'sf' object with the spatial coordinates</span></span>
+<span id="cb104-346"><a href="#cb104-346" aria-hidden="true" tabindex="-1"></a>reading_sf_data <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(reading_data, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>))</span>
+<span id="cb104-347"><a href="#cb104-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-348"><a href="#cb104-348" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
+<span id="cb104-349"><a href="#cb104-349" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
+<span id="cb104-350"><a href="#cb104-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb104-351"><a href="#cb104-351" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1462,4 +1859,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
