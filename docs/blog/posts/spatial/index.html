@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.21">
+<meta name="generator" content="quarto-1.3.353">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Isaac Ajao">
-<meta name="dcterms.date" content="2024-12-13">
+<meta name="dcterms.date" content="2024-12-14">
 <meta name="description" content="Learn how to handle spatial data analysis using R.">
-<title>Spatial Econometrics Data Analysis – SoftData Consult</title>
+<title>SoftData Consult - Spatial Econometrics Data Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,10 +68,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-018089954d508eae8a473f0b7f0491f0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-8fef7180bb8e7729b6a1d22730a14255.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -79,12 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,18 +88,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
 </head>
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../img/softlogo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../../index.html">
@@ -112,50 +105,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../data_analytics/index.html"> 
-<span class="menu-text">Data Analytics</span></a>
+    <a class="nav-link" href="../../../data_analytics/index.html" rel="" target="">
+ <span class="menu-text">Data Analytics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../blog/index.html"> 
-<span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../../blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/index.html"> 
-<span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../../../cv/index.html" rel="" target="">
+ <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Projects</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">
 <li>
-    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/rii_shinyapp">
+    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/rii_shinyapp" rel="" target="">
  <span class="dropdown-text">Relative Importance Index</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/regression_shinyapp">
+    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/regression_shinyapp" rel="" target="">
  <span class="dropdown-text">Simple Linear Regression</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/multiple_regression">
+    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/multiple_regression" rel="" target="">
  <span class="dropdown-text">Multiple Linear Regression</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://sotfdataconsult.shinyapps.io/one-sample_mean_t-test">
+    <a class="dropdown-item" href="https://sotfdataconsult.shinyapps.io/one-sample_mean_t-test" rel="" target="">
  <span class="dropdown-text">One-sample mean t-test</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/t-test/">
+    <a class="dropdown-item" href="https://softdataconsult.shinyapps.io/t-test/" rel="" target="">
  <span class="dropdown-text">Two-sample mean t-test</span></a>
   </li>  
     </ul>
@@ -163,34 +156,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/@softdataconsult"> <i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@softdataconsult" rel="" target=""><i class="bi bi-youtube" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/seyiajao"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/seyiajao" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/softdataconsult/softdataconsult.github.io/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/softdataconsult/softdataconsult.github.io/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/isaac-oluwaseyi-ajao-datascientist-dataanalyst-statistician-consultant/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/isaac-oluwaseyi-ajao-datascientist-dataanalyst-statistician-consultant/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:mail.isaacoluwaseyiajao@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="email">
+    <a class="nav-link" href="mailto:mail.isaacoluwaseyiajao@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img" aria-label="email">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+<div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default blog-post page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
@@ -220,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 13, 2024</p>
+        <p class="date">December 14, 2024</p>
       </div>
     </div>
     
@@ -230,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
    
   <ul>
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
@@ -242,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ols-model" id="toc-ols-model" class="nav-link" data-scroll-target="#ols-model">OLS model</a></li>
   <li><a href="#slx-spatial-lag-model-with-exogenous-variables" id="toc-slx-spatial-lag-model-with-exogenous-variables" class="nav-link" data-scroll-target="#slx-spatial-lag-model-with-exogenous-variables">SLX (Spatial Lag Model with Exogenous Variables)</a></li>
   </ul></nav>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content"><p>In this blog, I will demonstrate how to perform spatial data analysis using R, focusing on techniques for exploring and modeling spatial relationships in your data. You’ll learn how to handle spatial data, visualize spatial patterns, and apply spatial econometric models to gain deeper insights into spatial dependencies.</p>
@@ -382,10 +375,7 @@ Geodetic CRS:  WGS 84
 all</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -495,56 +485,38 @@ attr(,"package")
 </div>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">reading_central</span><span class="op">$</span><span class="va">geometry</span>, add<span class="op">=</span><span class="cn">TRUE</span>, pch<span class="op">=</span><span class="fl">20</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">reading_simple</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">reading_central</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">reading_simple</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">reading_hr</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">reading_simple</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">reading_hr</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">reading_central</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">reading_simple</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill<span class="op">=</span><span class="va">books_read</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">reading_central</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -565,10 +537,7 @@ Geodetic CRS:  WGS 84</code></pre>
 all</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -594,10 +563,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <span>     main <span class="op">=</span> <span class="st">"Spatial distn. of students' reading hour"</span>, </span>
 <span>     breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -616,10 +582,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <span>     main <span class="op">=</span> <span class="st">"Spatial distn. of number of books read"</span>, </span>
 <span>     breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#legend("topright", legend = "books_read", fill = topo.colors(5))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -637,10 +600,7 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">[</span><span class="st">"cgpa"</span><span class="op">]</span>, main <span class="op">=</span> <span class="st">"Spatial Distribution of Students' CGPA"</span>, breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Add a legend</span></span>
 <span><span class="co">#legend("topright", legend = "CGPA", fill = topo.colors(5))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -661,10 +621,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <span>     main <span class="op">=</span> <span class="st">"Spatial distn. of students who love reading"</span>, </span>
 <span>     breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#legend("topright", legend = "Love reading", fill = topo.colors(5))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -684,10 +641,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <span>     main <span class="op">=</span> <span class="st">"Spatial distn. of readers who read at least 1 hour per day"</span>, </span>
 <span>     breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -706,10 +660,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <span>     main <span class="op">=</span> <span class="st">"Spatial distn. of readers who finished their last book"</span>, </span>
 <span>     breaks <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="six-maps-in-one-frame" class="level3"><h3 class="anchored" data-anchor-id="six-maps-in-one-frame">Six maps in one frame</h3>
@@ -732,42 +683,42 @@ Bounding box:  xmin: 2.668431 ymin: 4.270418 xmax: 14.67642 ymax: 13.89201
 Geodetic CRS:  WGS 84</code></pre>
 </div>
 <div class="sourceCode" id="cb81"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set up a 2x3 layout with tmap</span></span>
-<span><span class="va">tm_layout</span> <span class="op">&lt;-</span> <span class="fu">tm_layout</span><span class="op">(</span>title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Reading Hour"</span>, <span class="st">"Books Read"</span>, <span class="st">"CGPA"</span>, <span class="st">"Love Reading"</span>, <span class="st">"At least 1 hr/day"</span>, <span class="st">"Finished last book"</span><span class="op">)</span>,</span>
+<span><span class="va">tm_layout</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_layout.html">tm_layout</a></span><span class="op">(</span>title <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Reading Hour"</span>, <span class="st">"Books Read"</span>, <span class="st">"CGPA"</span>, <span class="st">"Love Reading"</span>, <span class="st">"At least 1 hr/day"</span>, <span class="st">"Finished last book"</span><span class="op">)</span>,</span>
 <span>                       frame <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                       asp <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>  <span class="co"># Set aspect ratio to 0 for individual map customization</span></span>
 <span></span>
 <span><span class="co"># Plot the first map</span></span>
-<span><span class="va">tm1</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"reading_hr"</span>, title <span class="op">=</span> <span class="st">"Reading Hour"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"reading_hr"</span>, title <span class="op">=</span> <span class="st">"Reading Hour"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot the second map</span></span>
-<span><span class="va">tm2</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"books_read"</span>, title <span class="op">=</span> <span class="st">"Number of Books Read"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"books_read"</span>, title <span class="op">=</span> <span class="st">"Number of Books Read"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot the third map</span></span>
-<span><span class="va">tm3</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"cgpa"</span>, title <span class="op">=</span> <span class="st">"CGPA"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"cgpa"</span>, title <span class="op">=</span> <span class="st">"CGPA"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot the fourth map</span></span>
-<span><span class="va">tm4</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"love_readi"</span>, title <span class="op">=</span> <span class="st">"Love Reading"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"love_readi"</span>, title <span class="op">=</span> <span class="st">"Love Reading"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot the fifth map</span></span>
-<span><span class="va">tm5</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"met_standa"</span>, title <span class="op">=</span> <span class="st">"At least 1 hr/day"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"met_standa"</span>, title <span class="op">=</span> <span class="st">"At least 1 hr/day"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot the sixth map</span></span>
-<span><span class="va">tm6</span> <span class="op">&lt;-</span> <span class="fu">tm_shape</span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_borders</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">tm_fill</span><span class="op">(</span><span class="st">"finis_book"</span>, title <span class="op">=</span> <span class="st">"Finished last book"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
+<span><span class="va">tm6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">reading_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="st">"finis_book"</span>, title <span class="op">=</span> <span class="st">"Finished last book"</span>, style <span class="op">=</span> <span class="st">"quantile"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Display the maps in a 2x3 layout</span></span>
-<span><span class="fu">tmap_arrange</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">tm1</span>, <span class="va">tm2</span>, <span class="va">tm3</span>, <span class="va">tm4</span>, <span class="va">tm5</span>, <span class="va">tm6</span><span class="op">)</span>, layout <span class="op">=</span> <span class="va">tm_layout</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://r-tmap.github.io/tmap/reference/tmap_arrange.html">tmap_arrange</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">tm1</span>, <span class="va">tm2</span>, <span class="va">tm3</span>, <span class="va">tm4</span>, <span class="va">tm5</span>, <span class="va">tm6</span><span class="op">)</span>, layout <span class="op">=</span> <span class="va">tm_layout</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Legend labels were too wide. The labels have been resized to 0.55, 0.55, 0.55, 0.55, 0.55. Increase legend.width (argument of tm_layout) to make the legend wider and therefore the labels larger.</code></pre>
 </div>
@@ -775,10 +726,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <pre><code>Legend labels were too wide. The labels have been resized to 0.55, 0.55, 0.55, 0.55, 0.55. Increase legend.width (argument of tm_layout) to make the legend wider and therefore the labels larger.</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -793,7 +741,7 @@ Geodetic CRS:  WGS 84</code></pre>
 </section><section id="spatial-weights-matrix-w" class="level3"><h3 class="anchored" data-anchor-id="spatial-weights-matrix-w">Spatial weights matrix W</h3>
 <div class="cell">
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
-<span><span class="va">listw</span> <span class="op">&lt;-</span> <span class="fu">mat2listw</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">listw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/spdep/reference/mat2listw.html">mat2listw</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in mat2listw(matrix(rbinom(nrow(reading_data)^2, 1, 0.2),
 nrow(reading_data))): style is M (missing); style should be set to a valid
@@ -817,7 +765,7 @@ M 38 1444 255 310 7264</code></pre>
 </div>
 </section><section id="lm.morantest" class="level3"><h3 class="anchored" data-anchor-id="lm.morantest">lm.morantest</h3>
 <div class="cell">
-<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">lm.morantest</span><span class="op">(</span><span class="va">reg1</span>, <span class="va">listw</span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://r-spatial.github.io/spdep/reference/lm.morantest.html">lm.morantest</a></span><span class="op">(</span><span class="va">reg1</span>, <span class="va">listw</span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Global Moran I for regression residuals
@@ -891,7 +839,7 @@ Residual standard error: 0.9277 on 32 degrees of freedom
 Multiple R-squared:  0.4904,    Adjusted R-squared:  0.4108 
 F-statistic: 6.159 on 5 and 32 DF,  p-value: 0.000419</code></pre>
 </div>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">lm.morantest</span><span class="op">(</span><span class="va">reg1</span>,<span class="va">listw</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://r-spatial.github.io/spdep/reference/lm.morantest.html">lm.morantest</a></span><span class="op">(</span><span class="va">reg1</span>,<span class="va">listw</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Global Moran I for regression residuals
@@ -907,7 +855,7 @@ Observed Moran I      Expectation         Variance
      0.097317729     -0.034432679      0.002896984 </code></pre>
 </div>
 <div class="sourceCode" id="cb98"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#lm.moranplot(reg1,listw1)</span></span>
-<span><span class="fu">lm.LMtests</span><span class="op">(</span><span class="va">reg1</span>,<span class="va">listw</span>,test<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://r-spatial.github.io/spdep/reference/lm.RStests.html">lm.LMtests</a></span><span class="op">(</span><span class="va">reg1</span>,<span class="va">listw</span>,test<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LMerr"</span>, <span class="st">"LMlag"</span>, <span class="st">"RLMerr"</span>, <span class="st">"RLMlag"</span>, <span class="st">"SARMA"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Please update scripts to use lm.RStests in place of lm.LMtests</code></pre>
 </div>
@@ -977,7 +925,7 @@ SARMA = 2.5964, df = 2, p-value = 0.273</code></pre>
 <span><span class="va">reading_sf_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="va">reading_data</span>, coords <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"long"</span>, <span class="st">"lat"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Create a spatial weights matrix (queen contiguity)</span></span>
-<span><span class="va">listw</span> <span class="op">&lt;-</span> <span class="fu">mat2listw</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">listw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/spdep/reference/mat2listw.html">mat2listw</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">0.2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">reading_data</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in mat2listw(matrix(rbinom(nrow(reading_data)^2, 1, 0.2),
 nrow(reading_data))): style is M (missing); style should be set to a valid
@@ -1044,7 +992,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1076,29 +1035,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -1150,27 +1087,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1180,17 +1100,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1202,130 +1113,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1369,7 +1157,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1395,32 +1182,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1777,19 +1538,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb104-349"><a href="#cb104-349" aria-hidden="true" tabindex="-1"></a>listw <span class="ot">&lt;-</span> <span class="fu">mat2listw</span>(<span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="fu">nrow</span>(reading_data)<span class="sc">^</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="fu">nrow</span>(reading_data)))</span>
 <span id="cb104-350"><a href="#cb104-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb104-351"><a href="#cb104-351" aria-hidden="true" tabindex="-1"></a></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">
-<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2024 SoftData Consult</span> <span class="faux-block"><a href="https://github.com/softdataconsult/softdataconsult.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></p>
-</div>   
-    <div class="nav-footer-center">
-<p><span class="faux-block"><i class="fa-brands fa-orcid" aria-label="orcid"></i> <strong>ORCID</strong> <a href="https://orcid.org/0000-0002-3403-6082">0000-0002-3403-6082</a></span></p>
-</div>
-    <div class="nav-footer-right">
-<p><span class="faux-block"> Designed and built with</span> <span class="faux-block"><a href="https://www.r-project.org/">R</a> and <a href="https://quarto.org/">Quarto</a></span></p>
-</div>
+    <div class="nav-footer-left"><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2024 SoftData Consult</span> <span class="faux-block"><a href="https://github.com/softdataconsult/softdataconsult.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></div>   
+    <div class="nav-footer-center"><span class="faux-block"><i class="fa-brands fa-orcid" aria-label="orcid"></i> <strong>ORCID</strong> <a href="https://orcid.org/0000-0002-3403-6082">0000-0002-3403-6082</a></span></div>
+    <div class="nav-footer-right"><span class="faux-block"> Designed and built with</span> <span class="faux-block"><a href="https://www.r-project.org/">R</a> and <a href="https://quarto.org/">Quarto</a></span></div>
   </div>
 </footer>
 
