@@ -2,8 +2,8 @@
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/posts/pls-sem/index.html",
       "/blog/posts/spatial/index.html",
+      "/blog/posts/pls-sem/index.html",
       "/blog/posts/python/index.html",
       "/blog/posts/website-traffic/index.html",
       "/blog/posts/stata/index.html",
