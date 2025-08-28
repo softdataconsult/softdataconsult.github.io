@@ -79,7 +79,7 @@ website:
     type: textbox
   page-footer: 
     left: |
-      <span class="faux-block">{{< fa brands creative-commons >}} 2024 SoftData Consult</span>
+      <span class="faux-block">{{< fa brands creative-commons >}} 2025 SoftData Consult</span>
       <span class="faux-block"><a href="https://github.com/softdataconsult/softdataconsult.github.io">{{< fa brands github >}} Source Code</a></span>
     center: |
      <span class="faux-block">{{< fa brands orcid >}} <strong>ORCID</strong> [0000-0002-3403-6082](https://orcid.org/0000-0002-3403-6082)</span>
