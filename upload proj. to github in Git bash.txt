@@ -33,5 +33,6 @@ cd C:\Users\DR-AJAO\Documents\softdata_consult\Projects\softdataconsult.github.i
 git add .
 git commit -m "Updated: added current"
 git remote add origin https://github.com/softdataconsult/softdataconsult.github.io.git
+git pull origin main --allow-unrelated-histories
 git push -u origin main
 git push -u origin main --force
