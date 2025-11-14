@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cb1a9842d0a3022a410c463066f08917.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-19bb0887907893116dc6a801a0af762a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -151,7 +152,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -177,7 +178,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/softlogo.png" alt="" class="navbar-logo">
+    <img src="../img/softlogo.png" alt="" class="navbar-logo light-content">
+    <img src="../img/softlogo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">SoftData Consult</span>
@@ -305,7 +307,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U3BhdGlhbCUyQ1I=" data-listing-date-sort="1756339200000" data-listing-file-modified-sort="1756388282056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
+<div class="quarto-post image-right" data-index="0" data-categories="U3BhdGlhbCUyQ1I=" data-listing-date-sort="1763078400000" data-listing-file-modified-sort="1763078872443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="853">
 <div class="thumbnail"><a href="../blog/posts/spatial/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/spatial/spatial2.png" class="thumbnail-image">
@@ -329,7 +331,7 @@ window.Quarto = {
 <div class="metadata">
 <a href="../blog/posts/spatial/index.html" class="no-external">
 <div class="listing-date">
-Aug 28, 2025
+Nov 14, 2025
 </div>
 <div class="listing-author">
 Isaac Ajao
@@ -337,7 +339,7 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcyUyQ1NtYXJ0UExT" data-listing-date-sort="1756339200000" data-listing-file-modified-sort="1756388282054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
+<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcyUyQ1NtYXJ0UExT" data-listing-date-sort="1763078400000" data-listing-file-modified-sort="1763078872441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
 <div class="thumbnail"><a href="../blog/posts/pls-sem/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/pls-sem/pls-sem.png" class="thumbnail-image">
@@ -365,12 +367,12 @@ Isaac Ajao
 <div class="metadata">
 <a href="../blog/posts/pls-sem/index.html" class="no-external">
 <div class="listing-date">
-Aug 28, 2025
+Nov 14, 2025
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcw==" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1756388282055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="437">
+<div class="quarto-post image-right" data-index="2" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcw==" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1763078872443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="437">
 <div class="thumbnail"><a href="../blog/posts/python/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/python/python_logo.png" class="thumbnail-image">
@@ -404,7 +406,7 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="UHl0aG9u" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1756388282071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="886">
+<div class="quarto-post image-right" data-index="3" data-categories="UHl0aG9u" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1763078872458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="886">
 <div class="thumbnail"><a href="../blog/posts/website-traffic/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/website-traffic/website-traffic.png" class="thumbnail-image">
@@ -434,7 +436,42 @@ Isaac Ajao
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1756388282042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<div class="quarto-post image-right" data-index="4" data-categories="UHl0aG9uJTJDUiUyQ1N0YXRhJTJDc3BzcyUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1763078872457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
+<div class="thumbnail"><a href="../blog/posts/spss/index.html" class="no-external">
+
+<img loading="lazy" src="../blog/posts/spss/spss.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/spss/index.html" class="no-external">Data Analytics Using SPSS</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGE='); return false;">Stata</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3Bzcw=='); return false;">spss</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QW5hbHl0aWNz'); return false;">Analytics</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/spss/index.html" class="no-external">
+SPSS is a powerful statistical software used for data analysis, management, and visualization in various fields. It simplifies complex statistical processes, making it…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/spss/index.html" class="no-external">
+<div class="listing-date">
+Sep 28, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="UHl0aG9uJTJDUiUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1763078872431" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <div class="thumbnail"><a href="../blog/posts/R/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/R/R_logo.png" class="thumbnail-image">
@@ -465,7 +502,7 @@ Sep 28, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="UHl0aG9uJTJDUiUyQ1N0YXRhJTJDc3BzcyUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1756388282071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<div class="quarto-post image-right" data-index="6" data-categories="UHl0aG9uJTJDUiUyQ1N0YXRhJTJDc3BzcyUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1763078872458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
 <div class="thumbnail"><a href="../blog/posts/stata/index.html" class="no-external">
 
 <img loading="lazy" src="../blog/posts/stata/stata_logo.png" class="thumbnail-image">
@@ -494,41 +531,6 @@ Stata is a versatile software used for data analysis, statistical modeling, and 
 </div>
 <div class="metadata">
 <a href="../blog/posts/stata/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="UHl0aG9uJTJDUiUyQ1N0YXRhJTJDc3BzcyUyQ0FuYWx5dGljcw==" data-listing-date-sort="1727481600000" data-listing-file-modified-sort="1756388282070" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
-<div class="thumbnail"><a href="../blog/posts/spss/index.html" class="no-external">
-
-<img loading="lazy" src="../blog/posts/spss/spss.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/spss/index.html" class="no-external">Data Analytics Using SPSS</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGE='); return false;">Stata</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3Bzcw=='); return false;">spss</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QW5hbHl0aWNz'); return false;">Analytics</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/spss/index.html" class="no-external">
-SPSS is a powerful statistical software used for data analysis, management, and visualization in various fields. It simplifies complex statistical processes, making it…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/spss/index.html" class="no-external">
 <div class="listing-date">
 Sep 28, 2024
 </div>
@@ -612,13 +614,14 @@ Sep 28, 2024
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1011,7 +1014,7 @@ Sep 28, 2024
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "`Blog`"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
@@ -1026,7 +1029,7 @@ Sep 28, 2024
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Welcome to my blog, where data meets discovery! Here, I train and guide aspiring data enthusiasts to unlock the power of tools like R, Python, STATA, and more. Whether you're just starting or looking to deepen your skills, you'll find practical insights and tutorials to help you master data analytics and turn information into actionable insights. Let's embark on this journey of learning, growth, and innovation together!</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
