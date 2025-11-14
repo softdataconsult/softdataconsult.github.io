@@ -1,0 +1,298 @@
+---
+title: "Spatial Econometrics Data Analysis"
+description: |
+  Learn how to handle spatial data analysis using R.
+date: today
+author: "Isaac Ajao"
+#date: "2024-10-06"
+categories: [Spatial, R]
+image: "spatial2.png"
+---
+
+
+
+In this blog, I will demonstrate how to perform spatial data analysis using R, 
+focusing on techniques for exploring and modeling spatial relationships in your 
+data. You'll learn how to handle spatial data, visualize spatial patterns, and 
+apply spatial econometric models to gain deeper insights into spatial 
+dependencies. 
+
+**Case study:** Reading Culture Among Higher Education Students in 
+Southwestern Nigeria.
+
+
+### Introduction 
+
+Spatial econometrics is a branch of econometrics that deals with the modeling 
+and analysis of spatially dependent data. In traditional econometrics, 
+observations are often assumed to be independent of each other, but in spatial 
+econometrics, it is recognized that observations from nearby locations can 
+influence each other, creating spatial dependence.
+
+This analysis incorporates spatial relationships into models through spatial 
+weights matrices, which define the structure of these dependencies. Two common
+forms of spatial dependence are spatial lag (where the value of a variable in 
+one location depends on the values of the same variable in nearby locations) 
+and spatial error (where errors in one location are correlated with errors in 
+nearby locations).
+
+Spatial econometrics is especially useful in fields like regional economics, 
+real estate, environmental studies, and geography, where spatial factors 
+significantly impact the relationships being studied. It allows for more 
+accurate modeling and understanding of phenomena such as housing prices, 
+land use, and even the spread of diseases, taking into account the spatial 
+proximity of observations.
+
+
+### Load the necessary libraries
+
+```{r}
+library(sf)
+library(spdep)
+library(splm)
+library(spatialreg)
+library(sp)
+library(stargazer)
+```
+
+### Reading the shapefile containing the data
+```{r}
+## Reading shape file containing the data
+reading = st_read("reading_cultre.shp",quiet = TRUE)
+names(reading) #show variable names
+summary(reading)
+head(reading)
+plot(reading)
+```
+
+
+
+```{r}
+class(reading)
+str(reading)
+
+st_is_longlat(reading) # checking whether the geographical coordinates have been 
+#projected (the result TRUE means not) 
+
+st_crs(reading) #checking which mapping was applied
+
+table(st_is_valid(reading)) # validation
+
+reading_sp<-as(reading, "Spatial") 
+class(reading_sp)
+```
+
+```{r}
+reading_points<-st_cast(reading$geometry, "MULTIPOINT")
+```
+
+```{r}
+reading_points_count<-sapply(reading_points, length)
+sum(reading_points_count) # Checking how many vertices are in all counties
+```
+
+
+```{r}
+reading_simple<-st_simplify(reading, dTolerance = 50)
+```
+
+
+```{r}
+reading_simple_points<-st_cast(reading_simple$geometry, "MULTIPOINT")
+sum(sapply(reading_simple_points, length))
+```
+
+```{r}
+reading_central<-st_centroid(reading)
+```
+
+
+```{r}
+plot(st_geometry(reading))
+reading_central<-st_centroid(reading)
+plot(reading_central$geometry, add=TRUE, pch=20, col="red")
+```
+
+```{r}
+library(ggplot2)
+ggplot(reading_simple) + geom_sf() + theme_bw() 
+ggplot(reading_central) + geom_sf() + theme_bw() 
+```
+
+```{r}
+ggplot(reading_simple) + geom_sf(aes(fill = reading_hr)) + theme_bw()
+```
+
+```{r}
+ggplot() + geom_sf(data=reading_simple, aes(fill=reading_hr)) +
+geom_sf(data=reading_central, col="red") + theme_bw()
+```
+
+
+```{r}
+ggplot() + geom_sf(data=reading_simple, aes(fill=books_read)) +
+geom_sf(data=reading_central, col="red") + theme_bw()
+```
+
+
+```{r}
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf)
+```
+
+
+```{r}
+names(reading)
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf["reading_hr"], 
+     main = "Spatial distn. of students' reading hour", 
+     breaks = "quantile")
+```
+
+
+```{r}
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf["books_read"], 
+     main = "Spatial distn. of number of books read", 
+     breaks = "quantile")
+#legend("topright", legend = "books_read", fill = topo.colors(5))
+```
+
+
+```{r}
+reading_sf <- st_read("reading_cultre.shp")
+plot(reading_sf["cgpa"], main = "Spatial Distribution of Students' CGPA", breaks = "quantile")
+# Add a legend
+#legend("topright", legend = "CGPA", fill = topo.colors(5))
+```
+
+```{r}
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf["love_readi"], 
+     main = "Spatial distn. of students who love reading", 
+     breaks = "quantile")
+#legend("topright", legend = "Love reading", fill = topo.colors(5))
+```
+
+
+```{r}
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf["met_standa"], 
+     main = "Spatial distn. of readers who read at least 1 hour per day", 
+     breaks = "quantile")
+```
+
+
+```{r}
+reading_sf = st_read("reading_cultre.shp") #shape file earlier created
+plot(reading_sf["finis_book"], 
+     main = "Spatial distn. of readers who finished their last book", 
+     breaks = "quantile")
+```
+
+### Six maps in one frame
+
+```{r}
+library(tmap)
+
+# Read shapefile
+reading_sf <- st_read("reading_cultre.shp")
+
+# Set up a 2x3 layout with tmap
+tm_layout <- tm_layout(title = c("Reading Hour", "Books Read", "CGPA", "Love Reading", "At least 1 hr/day", "Finished last book"),
+                       frame = FALSE,
+                       asp = 0)  # Set aspect ratio to 0 for individual map customization
+
+# Plot the first map
+tm1 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("reading_hr", title = "Reading Hour", style = "quantile")
+
+# Plot the second map
+tm2 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("books_read", title = "Number of Books Read", style = "quantile")
+
+# Plot the third map
+tm3 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("cgpa", title = "CGPA", style = "quantile")
+
+# Plot the fourth map
+tm4 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("love_readi", title = "Love Reading", style = "quantile")
+
+# Plot the fifth map
+tm5 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("met_standa", title = "At least 1 hr/day", style = "quantile")
+
+# Plot the sixth map
+tm6 <- tm_shape(reading_sf) +
+  tm_borders() +
+  tm_fill("finis_book", title = "Finished last book", style = "quantile")
+
+# Display the maps in a 2x3 layout
+tmap_arrange(list(tm1, tm2, tm3, tm4, tm5, tm6), layout = tm_layout)
+```
+
+
+```{r}
+# read the data from excel for other analysis
+reading_data <- read.csv("reading_culture_coordinates.csv")
+```
+
+
+```{r}
+#define our regression equation so we don't have to type it each time
+reg.eq1=reading_hr ~ books_read + cgpa + love_readi + met_standa + finis_book
+reg1=lm(reg.eq1,data=reading)
+```
+
+### Spatial weights matrix W
+```{r}
+# Create a spatial weights matrix (queen contiguity)
+listw <- mat2listw(matrix(rbinom(nrow(reading_data)^2, 1, 0.2), nrow(reading_data)))
+
+listw
+```
+
+
+### lm.morantest
+
+```{r}
+lm.morantest(reg1, listw )
+```
+
+
+Let's run the Four simplest models: OLS, SLX, Lag Y, and Lag Error
+
+### OLS model
+```{r}
+library(spdep)
+library(spatialreg)
+reg1=lm(reg.eq1,data=reading)
+reg1b=lm(reading_hr ~ books_read + cgpa + love_readi + met_standa + finis_book, data=reading)
+summary(reg1)
+summary(reg1b)
+lm.morantest(reg1,listw)
+#lm.moranplot(reg1,listw1)
+lm.LMtests(reg1,listw,test=c("LMerr", "LMlag", "RLMerr", "RLMlag", "SARMA"))
+```
+
+### SLX (Spatial Lag Model with Exogenous Variables)
+
+```{r}
+# Assuming your data is named 'your_data'
+# Load required packages
+library(spatialreg)
+
+# Create an 'sf' object with the spatial coordinates
+reading_sf_data <- st_as_sf(reading_data, coords = c("long", "lat"))
+
+# Create a spatial weights matrix (queen contiguity)
+listw <- mat2listw(matrix(rbinom(nrow(reading_data)^2, 1, 0.2), nrow(reading_data)))
+```
+
+

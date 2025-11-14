@@ -1,0 +1,13 @@
+---
+title: Home
+---
+
+## Training on Statistical Data Analytics 
+
+<img src="seyi_pix.jpg" style="height: 30%; width: 30%; object-fit: contain" onclick="window.open('https://learning.softdataconsult.com/', 'blank');"/>
+
+
+As a consultant and trainer, I leverage cutting-edge tools like R and Python to guide clients in extracting maximum value from their data assets. My services encompass strategic consultancy, hands-on training, and mentorship programs tailored to specific needs. From optimizing operations to uncovering growth opportunities, I provide comprehensive solutions for data-driven success.
+
+----
+
