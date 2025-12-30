@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
-<meta name="dcterms.date" content="2024-09-28">
+<meta name="author" content="Dr Isaac Ajao">
+<meta name="dcterms.date" content="2025-12-30">
+<meta name="description" content="This page introduces practical approaches to data analytics and visualization using R, focusing on how to explore, transform, and communicate insights from real-world data through reproducible and script-based workflows.">
 
 <title>Data Analytics &amp; Visualization Using R – SoftData Consult</title>
 <style>
@@ -214,8 +215,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Data Analytics &amp; Visualization Using R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Python</div>
+                  <div>
+        <div class="description">
+          <p>This page introduces practical approaches to <strong>data analytics and visualization using R</strong>, focusing on how to explore, transform, and communicate insights from real-world data through reproducible and script-based workflows.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">Analytics</div>
               </div>
@@ -225,11 +230,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Dr Isaac Ajao </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 28, 2024</p>
+        <p class="date">December 30, 2025</p>
       </div>
     </div>
     
@@ -240,7 +251,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#data-analytics-visualization-using-r" id="toc-data-analytics-visualization-using-r" class="nav-link active" data-scroll-target="#data-analytics-visualization-using-r">Data Analytics &amp; Visualization Using R</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -253,11 +270,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="data-analytics-visualization-using-r" class="level2">
+<h2 class="anchored" data-anchor-id="data-analytics-visualization-using-r">Data Analytics &amp; Visualization Using R</h2>
 <p>Master the art of data analysis with R! In this course, you’ll learn how to explore, visualize, and analyze data using R, a powerful tool for statistical computing.</p>
+<p><strong>Data Analytics &amp; Visualization Using R</strong> This focuses on turning raw data into meaningful insights through structured analysis and clear visual communication. R is a powerful statistical programming language widely used in academia, research, and industry for data analysis, modeling, and visualization.</p>
+<p>On this page, you will find practical examples and explanations covering the full analytics workflow, including:</p>
+<ul>
+<li><strong>Data exploration and understanding</strong> using summary statistics and exploratory plots</li>
+<li><strong>Data cleaning and transformation</strong> with tidy, readable code using packages such as <code>dplyr</code></li>
+<li><strong>Exploratory Data Analysis (EDA)</strong> to identify patterns, trends, and potential outliers</li>
+<li><strong>Data visualization</strong> using <code>ggplot2</code> to create clear, informative, and publication-ready charts</li>
+<li><strong>Interpretation of results</strong>, with emphasis on translating numbers and visuals into insights</li>
+</ul>
+<p>The content emphasizes <strong>hands-on, script-based learning</strong>, making it suitable for beginners while remaining useful to intermediate users. Examples are drawn from <strong>education, health, and business datasets</strong>, particularly within the Nigerian and African context, to ensure relevance and practical value.</p>
+<p>Rather than focusing only on tools, this page highlights <strong>analytical thinking</strong>—how to ask the right questions, choose appropriate visualizations, and communicate findings effectively. All analyses are designed to be <strong>reproducible</strong>, allowing users to rerun and adapt the code for their own datasets.</p>
+<p>This page also supports the learning activities of the <strong>Ekiti R-Users Group</strong>, where R is used as a core tool for building data literacy, research capacity, and professional analytics skills through free, hands-on community trainings.</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <hr>
@@ -736,14 +768,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data Analytics &amp; Visualization Using R"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-28"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Python, R, Analytics]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "R_logo.png"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Master the art of data analysis with R! In this course, you'll learn how to explore, visualize, and analyze data using R, a powerful tool for statistical computing.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  This page introduces practical approaches to **data analytics and visualization using R**, focusing on how to explore, transform, and communicate insights from real-world data through reproducible and script-based workflows.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Dr Isaac Ajao"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R, Analytics]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "R_logo.png"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Analytics &amp; Visualization Using R</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Master the art of data analysis with R! In this course, you'll learn how to explore, visualize, and analyze data using R, a powerful tool for statistical computing.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Data Analytics &amp; Visualization Using R** </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>This focuses on turning raw data into meaningful insights through structured analysis and clear visual communication. R is a powerful statistical programming language widely used in academia, research, and industry for data analysis, modeling, and visualization.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>On this page, you will find practical examples and explanations covering the full analytics workflow, including:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Data exploration and understanding** using summary statistics and exploratory plots</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Data cleaning and transformation** with tidy, readable code using packages such as <span class="in">`dplyr`</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Exploratory Data Analysis (EDA)** to identify patterns, trends, and potential outliers</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Data visualization** using <span class="in">`ggplot2`</span> to create clear, informative, and publication-ready charts</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Interpretation of results**, with emphasis on translating numbers and visuals into insights</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The content emphasizes **hands-on, script-based learning**, making it suitable for beginners while remaining useful to intermediate users. Examples are drawn from **education, health, and business datasets**, particularly within the Nigerian and African context, to ensure relevance and practical value.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Rather than focusing only on tools, this page highlights **analytical thinking**—how to ask the right questions, choose appropriate visualizations, and communicate findings effectively. All analyses are designed to be **reproducible**, allowing users to rerun and adapt the code for their own datasets.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>This page also supports the learning activities of the **Ekiti R-Users Group**, where R is used as a core tool for building data literacy, research capacity, and professional analytics skills through free, hands-on community trainings.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
