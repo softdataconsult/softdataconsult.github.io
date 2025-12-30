@@ -1,10 +1,33 @@
 ---
 title: "Data Analytics & Visualization Using R"
-author: ""
-date: "2024-09-28"
-categories: [Python, R, Analytics]
+description: |
+  This page introduces practical approaches to **data analytics and visualization using R**, focusing on how to explore, transform, and communicate insights from real-world data through reproducible and script-based workflows.
+author: "Dr Isaac Ajao"
+date: today
+categories: [R, Analytics]
 image: "R_logo.png"
 ---
 
 
+## Data Analytics & Visualization Using R
+
 Master the art of data analysis with R! In this course, you'll learn how to explore, visualize, and analyze data using R, a powerful tool for statistical computing.
+
+
+**Data Analytics & Visualization Using R** 
+This focuses on turning raw data into meaningful insights through structured analysis and clear visual communication. R is a powerful statistical programming language widely used in academia, research, and industry for data analysis, modeling, and visualization.
+
+On this page, you will find practical examples and explanations covering the full analytics workflow, including:
+
+* **Data exploration and understanding** using summary statistics and exploratory plots
+* **Data cleaning and transformation** with tidy, readable code using packages such as `dplyr`
+* **Exploratory Data Analysis (EDA)** to identify patterns, trends, and potential outliers
+* **Data visualization** using `ggplot2` to create clear, informative, and publication-ready charts
+* **Interpretation of results**, with emphasis on translating numbers and visuals into insights
+
+The content emphasizes **hands-on, script-based learning**, making it suitable for beginners while remaining useful to intermediate users. Examples are drawn from **education, health, and business datasets**, particularly within the Nigerian and African context, to ensure relevance and practical value.
+
+Rather than focusing only on tools, this page highlights **analytical thinking**—how to ask the right questions, choose appropriate visualizations, and communicate findings effectively. All analyses are designed to be **reproducible**, allowing users to rerun and adapt the code for their own datasets.
+
+This page also supports the learning activities of the **Ekiti R-Users Group**, where R is used as a core tool for building data literacy, research capacity, and professional analytics skills through free, hands-on community trainings.
+

@@ -1,0 +1,54 @@
+---
+title: "Ekiti R-Users Group"
+description: |
+ Ekiti R-Users Group is a learning community for students, researchers, and professionals interested in using R for data analysis, statistics, and data science. The group hosts free, hands-on online meetups focused on practical skills, real-world datasets, and collaborative learning, with an emphasis on Nigerian contexts.
+date: today
+#author: "Isaac Ajao"
+categories: [R, Analytics]
+image: "Ekiti-R-Users-low.png"
+---
+
+
+## Ekiti R-Users Group
+
+**Ekiti R-Users Group** is a community of learners, researchers, and professionals interested in using **R** for data analysis, statistics, and data science. The group was created to support practical learning, peer engagement, and the development of data skills through hands-on sessions.
+
+The group organises **free, online trainings and meetups** that focus on real-world applications of R, especially using datasets related to **education, health, and business**, with strong relevance to the Nigerian context.
+
+### What We Do
+
+Ekiti R-Users Group provides:
+
+* Beginner-friendly introductions to **R and RStudio**
+* Practical sessions on **Exploratory Data Analysis (EDA)**
+* Data manipulation using **dplyr**
+* Data visualization using **ggplot2**
+* Basic statistical analysis and interpretation
+* Script-based learning (no prior knowledge of Markdown or Quarto required)
+
+All sessions are designed to be **hands-on**, interactive, and accessible to participants at different skill levels.
+
+### Who Can Join
+
+The group is open to:
+
+* Students and early-career researchers
+* Academics and lecturers
+* Data analysts and professionals
+* Anyone interested in learning R for data analysis
+
+No prior experience with R is required.
+
+### Community Platform
+
+Events and announcements are managed via Meetup.
+
+🔗 **Meetup Page:**
+[https://www.meetup.com/ekiti-r-user-group/?eventOrigin=pro_network](https://www.meetup.com/ekiti-r-user-group/?eventOrigin=pro_network)
+
+### Convener
+
+**Dr. Isaac Oluwaseyi Ajao**
+Data Scientist | Educator | Trainer
+SoftData Consult
+

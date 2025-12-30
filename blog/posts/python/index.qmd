@@ -2,7 +2,7 @@
 title: "One-way ANOVA using Python"
 description: |
   Learn how to carry out one-way analysis of variance using Python.
-date: "10-07-2024"
+date: today
 author: "Isaac Ajao"
 categories: [Python, R, Analytics]
 image: "python_logo.png"
