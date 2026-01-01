@@ -1,0 +1,12 @@
+#####################################
+To upload files after repo creation
+##################################### 
+- On RStudio, go to the "Terminal", type
+
+quarto render
+quarto preview
+git add .
+git commit -m "comment on the update performed"
+git push
+
+
