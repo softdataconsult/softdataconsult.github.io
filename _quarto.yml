@@ -17,12 +17,12 @@ website:
   description: "I am a Data Analyst, Trainer, and Consultant specializing in Python, R, Stata, and more."   # A brief slogan (optional)
   image: img/seyi_pix.jpg
   
-  favicon: img/softdata-logo.png
+  favicon: img/logo-new.png
   
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
-    logo: /img/softdata-logo.png
+    logo: /img/logo-new.png
     background: dark
     
     # your sub-pages
