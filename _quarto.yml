@@ -17,12 +17,12 @@ website:
   description: "I am a Data Analyst, Trainer, and Consultant specializing in Python, R, Stata, and more."   # A brief slogan (optional)
   image: img/seyi_pix.jpg
   
-  favicon: img/logo-new.png
+  favicon: img/softdata-logo-1000x1000.png
   
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
-    logo: /img/logo-new.png
+    logo: /img/softdata-logo-1000x1000.png
     background: dark
     
     # your sub-pages
@@ -79,7 +79,7 @@ website:
     type: textbox
   page-footer: 
     left: |
-      <span class="faux-block">{{< fa brands creative-commons >}} 2025 SoftData Consult</span>
+      <span class="faux-block">{{< fa brands creative-commons >}} 2026 SoftData Consult</span>
       <span class="faux-block"><a href="https://github.com/softdataconsult/softdataconsult.github.io">{{< fa brands github >}} Source Code</a></span>
     center: |
      <span class="faux-block">{{< fa brands orcid >}} <strong>ORCID</strong> [0000-0002-3403-6082](https://orcid.org/0000-0002-3403-6082)</span>
